@@ -82,3 +82,67 @@ body {
     display: flex;
     margin: 5px auto 10px auto;
 }
+
+.site_box {
+    width: 400px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: 60px;
+    align-items: center;
+}
+.col {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.mainpage_box {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    height: 700px;
+    background-color: rgba(255, 0, 0, 0.16);
+    margin: 15px 30% auto;
+}
+
+.input-box {
+    width: 300px;
+    height: 300px;
+    background-color: #daffc9;
+    border-radius: 15px;
+    display: flex;
+    margin: 30% auto 10px auto;
+}
+
+.output-box {
+    width: 300px;
+    height: 300px;
+    background-color: #00cbff;
+    border-radius: 15px;
+    display: flex;
+    margin: 30% auto 10px auto;
+}
+
+/*마이 페이지*/
+.my_output {
+    background-color: rgba(102, 0, 255, 0.35);
+    height: 750px;
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    margin: auto;
+    border-radius: 30px;
+    padding: 100px;
+}
+.col-md-auto{
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.47);
+    border-radius: 15px;
+    height: 200px;
+    margin: 15px;
+}
+/*얘 삭제예정*/
+.image_frame {
+    border: 3px solid black;
+    height: 150px;
+    text-align: center;
+    padding-top: 20%
