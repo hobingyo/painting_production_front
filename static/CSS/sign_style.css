@@ -18,11 +18,16 @@
         #sign_up_box {
             width: 400px;
             height: 600px;
-            background-color: red;
+            background-color: #7c0000;
             display: flex;
-            text-align: center;
             margin: 40px auto auto auto;
             border-radius: 15px;
-            align-items: center;
 
+        }
+        #sign_box {
+            width: 300px;
+            height: 400px;
+            background-color: #ff7070;
+            margin-left: 34px;
+            padding: 15px;
         }
