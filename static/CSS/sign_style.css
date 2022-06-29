@@ -1,0 +1,28 @@
+        #sidebar {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            width: 400px;
+            background: #a1ff00;
+            height: 100%;
+            overflow: auto;
+            position: fixed;
+            text-align: center;
+        }
+
+        body {
+            background-image: url("https://post-phinf.pstatic.net/MjAxNzExMThfMTU3/MDAxNTEwOTg1MjU0MDMw.UnE6KDZeDvuggh3tCZyAh1TnZdmvZQGLVZbT2nhBIAYg.9QvOIhmCZnSwa0BXJ8CVs3ROxovGtlVmRmglS2HE8esg.JPEG/20171118-006.jpg?type=w1200");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #sign_up_box {
+            width: 400px;
+            height: 600px;
+            background-color: red;
+            display: flex;
+            text-align: center;
+            margin: 40px auto auto auto;
+            border-radius: 15px;
+            align-items: center;
+
+        }
