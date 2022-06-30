@@ -1,5 +1,5 @@
-const backend_base_url = "http://127.0.0.1:5555/"
-const frontend_base_url = "http://127.0.0.1:11920/"
+const backend_base_url = "http://127.0.0.1:8000"
+const frontend_base_url = "http://127.0.0.1:5000"
 
 async function handleSignin() {
     const signupData = {
@@ -7,8 +7,12 @@ async function handleSignin() {
         password: document.getElementById("floatingPassword").value,
     }
 
-    const response = await fetch('${backend_base_url}/signup', {
-        method: 'POST',
+    const response = await fetch(`${backend_base_url}/user/`, {
+        headers: {
+            Accept: "application/json",
+            'Content-type': 'application/json'
+        },
+        method: 'post',
         body: JSON.stringify(signupData)
     }
     )

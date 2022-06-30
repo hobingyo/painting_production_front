@@ -21,18 +21,12 @@
             <!--가입아이디입력-->
             <div class="mb-3">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="ID">
+                    <input type="text" autocomplete="username" class="form-control" id="floatingInput" placeholder="username">
                     <label for="floatingInput">ID 입력</label>
                 </div>
                 <!--비밀번호입력1-->
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">비밀번호</label>
-                </div>
-                <br>
-                <!--비밀번호 재입력-->
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" autocomplete="new-password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">비밀번호</label>
                 </div>
                 <br>
@@ -41,7 +35,7 @@
                     <option>한국어</option>
                     <option>English</option>
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top: 15px">로그인</button>
+                <button type="submit" class="btn btn-primary" style="margin-top: 15px" onclick="handleSignin()">로그인</button>
             </div>
         </form>
     </div>
