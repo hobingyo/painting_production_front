@@ -6,9 +6,9 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
-function colorChange(color){
+function colorChange(color) {
     ctx.strokeStyle = color;
-} 
+}
 
 resetBtn.addEventListener("click", () => ctx.clearRect(0, 0, canvas.width, canvas.height));
 const INNITIAL_COLOR = "#000000"
@@ -107,6 +107,9 @@ if (range) {
 if (mode) {
     mode.addEventListener("click", handleModeClick);
 }
-if (saveBtn){
-  saveBtn.addEventListener("click", handleSaveClick);}
+if (saveBtn) {
+    saveBtn.addEventListener("click", handleSaveClick);
+}
+
+
 
