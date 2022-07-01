@@ -13,30 +13,38 @@
     <link rel="stylesheet" href="../static/CSS/sign_style.css?after">
 </head>
 <body>
+    <div class="header">
+        <div class="navbar">
+            <img style="margin-left:50px; width: 400px; height: 150px;" onclick="location.href='/sign-in'" src='../../static/logo.png'>
+        </div>
+    </div>
 <div id="sign_up_box">
-    <h1>회원가입박스</h1>
-    <br>
     <div id="sign_box">
+        <div style="display:block">
+            <h1 style="display:block; margin-left:50px; padding-top:20px"><b>회원가입</h1>
+        </div>
+            <br>
         <form>
             <!--가입아이디입력-->
+            <div class="inputs">
             <div class="mb-3">
                 <div class="form-floating mb-3">
                     <input type="text" autocomplete="username" class="form-control" id="floatingInput"
                            placeholder="username">
-                    <label for="floatingInput">ID 입력</label>
+                    <label for="floatingInput" style="color:grey">ID 입력</label>
                 </div>
                 <!--이메일 입력-->
                 <div class="form-floating">
                     <input type="email" autocomplete="email" class="form-control" id="floatingEmail"
                            placeholder="Email">
-                    <label for="floatingEmail">이메일</label>
+                    <label for="floatingEmail" style="color:grey">이메일</label>
                 </div>
                 <br>
                 <!--비밀번호입력-->
                 <div class="form-floating">
                     <input type="password" autocomplete="new-password" class="form-control" id="floatingPassword"
                            placeholder="Password">
-                    <label for="floatingPassword">비밀번호</label>
+                    <label for="floatingPassword" style="color:grey">비밀번호</label>
                 </div>
                 <br>
                 <!--이름입력-->
@@ -44,14 +52,13 @@
                     <div class="form-floating mb-3">
                         <input type="text" autocomplete="username" class="form-control" id="floatingFullname"
                                placeholder="fullname">
-                        <label for="floatingInput">fullname</label>
+                        <label for="floatingInput" style="color:grey">fullname</label>
                     </div>
-                    <br>
                     <!--일자 입력-->
                     <div class="form-floating">
                         <input type="date" class="form-control" id="floatingDate"
                                placeholder="Password">
-                        <label for="floatingDate">일자</label>
+                        <label for="floatingDate" style="color:grey">일자</label>
                     </div>
                     <br>
                     <h5>사용할 언어 선택</h5>
@@ -59,8 +66,12 @@
                         <option>한국어</option>
                         <option>English</option>
                     </select>
-                    <button type="submit" class="btn btn-primary" style="margin-top: 15px" onclick="handleSignin()">로그인
+                </div>
+                <button type="button" class="btn loginbutton" style="border:none; margin-top: 15px">로그인화면으로
+                </button>
+                    <button type="submit" class="btn btn1 " style="border:none; margin-top: 15px" onclick="handleSignup()">회원가입
                     </button>
+                    
                 </div>
             </div>
         </form>

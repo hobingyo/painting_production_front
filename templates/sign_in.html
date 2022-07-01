@@ -15,22 +15,33 @@
 
 <!--사이드바-->
 <body>
-<div id="sidebar">
-    <h1>사이드바</h1>
-    <h2>로그인 화면</h2>
+    <div class="header">
+        <div class="navbar">
+            <img style="margin-left:50px; width: 400px; height: 150px;" onclick="location.href='/sign-in'" src='../../static/logo.png'>
+        </div>
+    </div>
+<div id="sign_in_box">
     <!--로그인 정보 입력 폼-->
     <div id="sign_box">
+        <div style="display:block">
+            <h1 style="display:block; margin-left:50px; padding-top:30px;"><b>로그인</h1>
+        </div>
+        <br>
         <form>
+            <div class="inputs sign_in_inputs">
             <div class="mb-3">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="ID">
-                    <label for="floatingInput">ID 입력</label>
+                    <label for="floatingInput" style="color:grey">ID 입력</label>
                 </div>
                 <div class="form-floating">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">비밀번호</label>
+                    <label for="floatingPassword" style="color:grey">비밀번호</label>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin-top: 15px" onclick="handleSignin()">로그인</button>
+                <button type="button" class="btn signupbutton " style="border:none; margin-top: 15px">회원가입화면으로
+                </button>
+                <button type="submit" class="btn btn1" style="border:none; margin-top: 15px" onclick="handleSignin()">로그인</button>
+            </div>
             </div>
         </form>
     </div>
