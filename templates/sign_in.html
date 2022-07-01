@@ -17,7 +17,7 @@
 <body>
     <div class="header">
         <div class="navbar">
-            <img style="margin-left:50px; width: 400px; height: 150px;" onclick="location.href='/sign-in'" src='../../static/logo.png'>
+            <img style="margin-left:50px; width: 400px; height: 150px;" onclick="location.href='../templates/sign_in.html'" src='../../static/logo.png'>
         </div>
     </div>
 <div id="sign_in_box">
@@ -38,9 +38,9 @@
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword" style="color:grey">비밀번호</label>
                 </div>
-                <button type="button" class="btn signupbutton " style="border:none; margin-top: 15px">회원가입화면으로
+                <button type="button" class="btn signupbutton " style="border:none; margin-top: 15px" onclick="location.href='../templates/sign_up.html'">회원가입화면으로
                 </button>
-                <button type="submit" class="btn btn1" style="border:none; margin-top: 15px" onclick="handleSignin()">로그인</button>
+                <button type="button" class="btn btn1" style="border:none; margin-top: 15px" onclick="handleLogin()">로그인</button>
             </div>
             </div>
         </form>
