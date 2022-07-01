@@ -95,11 +95,13 @@
                     <div class="colors jsColor" style="background-color: #6b6b6b;"></div>
                 </div>
             </div>
-            <div class="paint_tools">
+            <div class="paint_tools controls__btns">
                 <input type="range" id="jsRange" min="0.1" max="10.0" value="2.5" step="0.1"/>
                 <button type="button" id="jsMode" class="btn btn-light"
                         style="border: 1px solid black; margin-left: 10px">채우기
                 </button>
+                <button onclick="colorChange('white')" id="jsEraser" class="btn btn-light " style="border: 1px solid black; margin-left: 10px">지우개</button>
+                <button id="resetBtn" class="btn btn-light" style="border: 1px solid black; margin-left: 10px">전체지우기</button>
             </div>
 
             <!-- Modal footer -->
