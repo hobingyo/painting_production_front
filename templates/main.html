@@ -14,10 +14,10 @@
 </head>
 
 
-<body>
+<body >
 <!--사이드바-->
 <div id="filter_box">
-    <img src="../static/logo.png" style="width: 350px;">
+    <img src="../static/logo.png" style="width: 420px; height: 250px;">
     <div class="sample_box">
         <h3>샘플1</h3>
     </div>
@@ -27,11 +27,8 @@
     <div class="sample_box">
         <h3>샘플3</h3>
     </div>
-    <div class="sample_box">
-        <h3>샘플4</h3>
-    </div>
-    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"
-            style="width: 150px; height: 120px">
+    <button type="button" class="btns btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"
+            style="width: 290px; height: 110px; margin-top: 10px;">
         <h3>그림판</h3>
     </button>
 </div>
@@ -40,29 +37,37 @@
 <div class="site_box">
     <div class="row">
         <div class="col">
-            <button type="button" class="btn btn-warning">전체 게시판</button>
+            <button type="button" class="btn top-botton">전체 게시판</button>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-warning">마이 페이지</button>
+            <button type="button" class="btn top-botton">마이 페이지</button>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-light">로그아웃</button>
+            <button type="button" class="btn top-botton">로그아웃</button>
         </div>
     </div>
 </div>
 
 <div class="mainpage_box">
     <div class="col">
-        <div class="input-box">
-            업로드
+        <div class="photo_up">
+            <p> <b>업로드</b> </p>
         </div>
-        <button>필터 적용하기</button>
+        <div class="input-box">
+        </div>
+        <button class="filter_button" style="font-size: 30px">
+            <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front">필터 적용하기</span></button>
     </div>
     <div class="col">
-        <div class="output-box">
-            결과물
+        <div class="photo_down">
+            <p> <b>결과물</b> </p>
         </div>
-        <button>다운로드</button>
+        <div class="output-box">
+
+        </div>
+        <button class="down_button" style="font-size: 30px">다운로드</button>
     </div>
 </div>
 
@@ -73,7 +78,7 @@
         <div class="modal-content" style="width: 600px; background-color: #cbcbcb">
             <!-- 모달 상단제목 -->
             <div class="modal-header">
-                <h4 class="modal-title">유저 그림판</h4>
+                <h4 class="modal-title">그려그려 그림판</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -106,9 +111,9 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
                 <button type="button" class="btn btn-success" id="jsSave">저장</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
             </div>
         </div>
     </div>

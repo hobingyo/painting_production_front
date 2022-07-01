@@ -293,26 +293,22 @@ body {
 }
 
 
-
-
-
-
 /* 게시판페이지 */
 #articlepage_box {
     width: 800px;
-    height: 700px;
-    background-color: rgb(47, 182, 216);
+    height: 750px;
+    background-color: rgb(126, 47, 216);
     display: flex;
     margin: 60px auto auto auto;
     text-align: center;
     border-radius: 15px;
-
+    padding: 20px 20px 30px 40px;
 }
 
 #article_box {
     width: 700px;
     height: 500px;
-    background-color: rgb(43, 145, 131);
+    background-color: rgb(12, 204, 178);
     display: flex;
     margin: auto;
     border-radius: 15px;
@@ -323,4 +319,31 @@ body {
     border-radius: 15px;
     margin: 5px;
 
+}
+
+.article_pic {
+    background-color: #27ae60;
+    display: flex;
+    margin: 100px 15px auto 15px;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.comment_box {
+    width: 400px;
+    height: 500px;
+    background-color: chartreuse;
+    display: flex;
+    margin: 20px auto 40px auto;
+    padding: 30px 15px 15px 10px;
+    border-radius: 15px;
+
+}
+
+.comment {
+    background-color: #fff100;
+    border-radius: 15px;
+    margin: 5px;
+    width: 85%;
 }
