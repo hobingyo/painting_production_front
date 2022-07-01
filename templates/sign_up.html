@@ -21,24 +21,51 @@
             <!--가입아이디입력-->
             <div class="mb-3">
                 <div class="form-floating mb-3">
-                    <input type="text" autocomplete="username" class="form-control" id="floatingInput" placeholder="username">
+                    <input type="text" autocomplete="username" class="form-control" id="floatingInput"
+                           placeholder="username">
                     <label for="floatingInput">ID 입력</label>
                 </div>
-                <!--비밀번호입력1-->
+                <!--이메일 입력-->
                 <div class="form-floating">
-                    <input type="password" autocomplete="new-password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="email" autocomplete="email" class="form-control" id="floatingEmail"
+                           placeholder="Email">
+                    <label for="floatingEmail">이메일</label>
+                </div>
+                <br>
+                <!--비밀번호입력-->
+                <div class="form-floating">
+                    <input type="password" autocomplete="new-password" class="form-control" id="floatingPassword"
+                           placeholder="Password">
                     <label for="floatingPassword">비밀번호</label>
                 </div>
                 <br>
-                <h5>사용할 언어 선택</h5>
-                <select class="form-select">
-                    <option>한국어</option>
-                    <option>English</option>
-                </select>
-                <button type="submit" class="btn btn-primary" style="margin-top: 15px" onclick="handleSignin()">로그인</button>
+                <!--이름입력-->
+                <div class="mb-3">
+                    <div class="form-floating mb-3">
+                        <input type="text" autocomplete="username" class="form-control" id="floatingFullname"
+                               placeholder="fullname">
+                        <label for="floatingInput">fullname</label>
+                    </div>
+                    <br>
+                    <!--일자 입력-->
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="floatingDate"
+                               placeholder="Password">
+                        <label for="floatingDate">일자</label>
+                    </div>
+                    <br>
+                    <h5>사용할 언어 선택</h5>
+                    <select class="form-select">
+                        <option>한국어</option>
+                        <option>English</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 15px" onclick="handleSignin()">로그인
+                    </button>
+                </div>
             </div>
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>

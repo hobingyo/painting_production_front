@@ -3,8 +3,11 @@ const frontend_base_url = "http://127.0.0.1:5000"
 
 async function handleSignin() {
     const signupData = {
-        username: document.getElementById("floatingInput").value,
-        password: document.getElementById("floatingPassword").value,
+        username : document.getElementById("floatingInput").value,
+        password : document.getElementById('floatingPassword').value,
+        email : document.getElementById('floatingEmail').value,
+        fullname : document.getElementById('floatingFullname').value,
+        // date : document.getElementById('floatingDate').value,
     }
 
     const response = await fetch(`${backend_base_url}/user/`, {
