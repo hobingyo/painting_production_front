@@ -295,22 +295,26 @@ body {
 
 /* 게시판페이지 */
 #articlepage_box {
-    width: 800px;
-    height: 750px;
-    background-color: rgb(126, 47, 216);
+    width: 100%;
+    height: 800px;
+    background-image: url("../../static/article.jpg");
+    background-size: cover;
     display: flex;
-    margin: 60px auto auto auto;
+    margin: 30px auto auto auto;
     text-align: center;
-    border-radius: 15px;
+
     padding: 20px 20px 30px 40px;
+}
+.page {
+    margin-top: 20px;
 }
 
 #article_box {
-    width: 700px;
-    height: 500px;
-    background-color: rgb(12, 204, 178);
+    width: 1050px;
+    height: 590px;
+    background-color: white;
     display: flex;
-    margin: auto;
+    margin: 130px auto auto auto;
     border-radius: 15px;
 }
 
