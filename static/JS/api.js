@@ -73,3 +73,13 @@ async function handleLogin() {
     }
 
 }
+
+// 로그아웃(적용전)
+
+function logout() {
+    localStorage.removeItem("")
+    localStorage.removeItem("")
+    localStorage.removeItem("")
+    alert("로그아웃 하였습니다")
+    window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
+}

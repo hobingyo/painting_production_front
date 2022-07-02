@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>그림그림 그림판</title>
@@ -10,14 +11,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--제이쿼리-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../static/CSS/main_style.css?after">
 </head>
+<body>
 
-
-<body >
 <!--사이드바-->
 <div id="filter_box">
-    <img src="../static/logo.png" style="width: 420px; height: 250px;">
+    <img src="../static/logo.png" style="width: 300px; height: 120px; margin-bottom: 40px;">
     <div class="sample_box">
         <h3>샘플1</h3>
     </div>
@@ -28,48 +30,54 @@
         <h3>샘플3</h3>
     </div>
     <button type="button" class="btns btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"
-            style="width: 290px; height: 110px; margin-top: 10px;">
+            style="width: 250px; height: 110px; margin-top: 10px;">
         <h3>그림판🎨</h3>
     </button>
 </div>
 
 <!--상단바-->
 <div class="site_box">
-    <div class="row" >
+    <div class="row">
         <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판</button>
+            <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판
+            </button>
         </div>
         <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지</button>
+            <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지
+            </button>
         </div>
         <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/sign_in.html'" >로그아웃</button>
+            <button type="button" class="btn top-botton" onclick="location.href='../templates/sign_in.html'">로그아웃
+            </button>
         </div>
     </div>
 </div>
 
-<div class="mainpage_box">
-    <div class="col">
+<div class="row mainpage_box">
+    <div class="col-6 justify-content-md-center">
         <div class="photo_up">
-            <p> <b>업로드</b> </p>
+            <p><b>업로드</b></p>
         </div>
-        <div class="input-box">
+        <div class="col input-box">
+            <div class="col content">
+            </div>
         </div>
         <button class="filter_button" style="font-size: 30px">
             <span class="shadow"></span>
-        <span class="edge"></span>
-        <span class="front">필터 적용하기</span></button>
+            <span class="edge"></span>
+            <span class="front">필터 적용하기</span></button>
     </div>
-    <div class="col">
+    <div class="col-6">
         <div class="photo_down">
-            <p> <b>결과물</b> </p>
+            <p><b>결과물</b></p>
         </div>
-        <div class="output-box">
-
-        </div>
+        <div class="output-box"></div>
         <button class="down_button" style="font-size: 30px">다운로드</button>
+
     </div>
 </div>
+</div>
+
 
 <!--모달컨텐츠-그림판-->
 <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -105,8 +113,11 @@
                 <button type="button" id="jsMode" class="btn btn-light"
                         style="border: 1px solid black; margin-left: 10px">채우기
                 </button>
-                <button onclick="colorChange('white')" id="jsEraser" class="btn btn-light " style="border: 1px solid black; margin-left: 10px">지우개</button>
-                <button id="resetBtn" class="btn btn-light" style="border: 1px solid black; margin-left: 10px">전체지우기</button>
+                <button onclick="colorChange('white')" id="jsEraser" class="btn btn-light "
+                        style="border: 1px solid black; margin-left: 10px">지우개
+                </button>
+                <button id="resetBtn" class="btn btn-light" style="border: 1px solid black; margin-left: 10px">전체지우기
+                </button>
             </div>
 
             <!-- Modal footer -->
@@ -119,5 +130,12 @@
     </div>
 </div>
 <script src="../static/JS/app.js"></script>
+<script src="../static/JS/function.js"></script>
 </body>
 </html>
+
+
+{#<article>#}
+{#    <div id="holder"></div>#}
+{#    <p id="status">이곳에 이미지를 업로드를 해주세요</p>#}
+{#</article>#}

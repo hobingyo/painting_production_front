@@ -13,7 +13,7 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    width: 500px;
+    width: 340px;
     height: 100%;
     position: fixed;
     text-align: center;
@@ -21,8 +21,8 @@ body {
 
 .sample_box {
     display: flex;
-    width: 300px;
-    height: 180px;
+    width: 200px;
+    height: 150px;
     background-color: blueviolet;
     margin: 0px auto 5px auto;
     align-items: center;
@@ -103,22 +103,20 @@ body {
 }
 
 
-
-
-
 .mainpage_box {
     display: flex;
-    width: 85%;
-    max-width: 1260px;
-    height: 850px;
+    width: 90%;
+    max-width: 1000px;
+    height: 700px;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    margin: 20px 70px 0px auto;
+    margin: 50px 30% 0 30%;
     border-radius: 2px;
+    border-radius: 15px;
 }
 
 .input-box {
-    width: 500px;
-    height: 550px;
+    width: 400px;
+    height: 400px;
     background-color: #daffc9;
     border-radius: 15px;
     display: flex;
@@ -184,8 +182,8 @@ body {
 }
 
 .output-box {
-    width: 500px;
-    height: 550px;
+    width: 400px;
+    height: 400px;
     background-color: #00cbff;
     border-radius: 15px;
     display: flex;
@@ -248,7 +246,7 @@ body {
     background-color: #27ae60;
 }
 
-.top-botton>* {
+.top-botton > * {
     position: relative;
 }
 
@@ -305,6 +303,7 @@ body {
 
     padding: 20px 20px 30px 40px;
 }
+
 #articlepage_box > button {
     width: 115px;
     height: 25px;
@@ -315,7 +314,7 @@ body {
 }
 
 
-#articlepage_box >button:hover {
+#articlepage_box > button:hover {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
 }
 
@@ -325,7 +324,7 @@ body {
 }
 
 #article_box {
-    width: 1150px;
+    width: 1700px;
     height: 670px;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     display: flex;
@@ -339,6 +338,7 @@ body {
     margin: 5px;
 
 }
+
 .badge {
     cursor: pointer;
     margin-top: 1px;
@@ -373,15 +373,46 @@ body {
     margin-top: 10px;
     width: 85%;
 }
-.comment-boxs {
-        width: 800px;
-        display: flex;
-        flex-direction: column;
-        margin: 10px auto 0px auto;
 
-    }
+.comment-boxs {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 0px auto;
+
+}
 
 .author_wrap {
     display: flex;
     flex-direction: row;
+}
+
+/*업로드 기능 구현*/
+/*#holder {*/
+/*    border: 10px dashed #ccc;*/
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*    background-color: #ffffff;*/
+/*    background-size: initial;*/
+/*}*/
+
+/*#holder.hover {*/
+/*    border: 3px dashed #ff0000;*/
+/*    border-radius: 15px;*/
+/*}*/
+
+.content{
+    outline: 2px dashed #92b0b3 ;
+    outline-offset:-10px;
+    text-align: center;
+    transition: all .15s ease-in-out;
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+}
+
+.content img, .content video{
+    width:100%;
+    height:100%;
+    display:none;
 }
