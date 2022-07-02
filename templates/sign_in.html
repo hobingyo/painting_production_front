@@ -24,7 +24,7 @@
     <!--로그인 정보 입력 폼-->
     <div id="sign_box">
         <div style="display:block">
-            <h1 style="display:block; margin-left:50px; padding-top:30px;"><b>로그인</h1>
+            <h1 style="display:block; margin-left:50px; padding-top:30px;"><b>로그인</b></h1>
         </div>
         <br>
         <form>
@@ -38,9 +38,11 @@
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword" style="color:grey">비밀번호</label>
                 </div>
-                <button type="button" class="btn signupbutton " style="border:none; margin-top: 15px" onclick="location.href='../templates/sign_up.html'">회원가입화면으로
+                <div style="display: flex; flex-direction: row; ">
+                <button type="button" class="btn signupbutton top-botton" style="border:none; margin-top: 15px" onclick="location.href='../templates/sign_up.html'">회원가입으로
                 </button>
-                <button type="button" class="btn btn1" style="border:none; margin-top: 15px" onclick="handleLogin()">로그인</button>
+                <button type="button" class="btn btn1 top-botton" style="border:none; margin-top: 15px; margin-left: 50px;  margin-left: 150px; background-color: #FFFF99; color: black;" onclick="handleLogin()">로그인</button>
+                    </div>
             </div>
             </div>
         </form>
