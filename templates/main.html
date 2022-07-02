@@ -72,8 +72,10 @@
             <p><b>결과물</b></p>
         </div>
         <div class="output-box"></div>
-        <button class="down_button" style="font-size: 30px">다운로드</button>
-
+        <div class="row">
+            <button class="down_button col" style="font-size: 30px">다운로드</button>
+            <button class="posting_button col" style="font-size: 30px" data-bs-toggle="modal" data-bs-target="#myModal1">게시물 작성</button>
+        </div>
     </div>
 </div>
 </div>
@@ -129,6 +131,42 @@
         </div>
     </div>
 </div>
+
+
+<!-- 게시물 포스팅 모달 -->
+<div class="modal fade" id="myModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color: rgba(150, 151, 200, 0.527)">
+    <div class="modal-dialog" >
+      <div class="modal-content" style="background-color: rgba(150, 151, 200, 0.4)">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">✍사진 포스팅 하기✍</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="posting_image">작업 결과물</div>
+            <label for="comment" style="margin-top:15px;"><b>게시물 내용:</b></label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+          <button type="button" class="btn btn-danger" onclick="javascript:btn(); location.href='../templates/article.html'">업로드</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
 <script src="../static/JS/app.js"></script>
 <script src="../static/JS/function.js"></script>
 </body>
