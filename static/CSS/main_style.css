@@ -310,11 +310,11 @@ body {
 }
 
 #article_box {
-    width: 1050px;
-    height: 590px;
-    background-color: white;
+    width: 1150px;
+    height: 670px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     display: flex;
-    margin: 130px auto auto auto;
+    margin: 30px auto auto auto;
     border-radius: 15px;
 }
 
@@ -322,6 +322,12 @@ body {
     background-color: brown;
     border-radius: 15px;
     margin: 5px;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 
 }
 
