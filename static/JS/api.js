@@ -66,7 +66,7 @@ async function handleLogin() {
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
-        alert("${{ user.username }}님의 접속을 환영합니다")
+        alert("{username}님의 접속을 환영합니다")
         window.location.replace(`${frontend_base_url}/templates/main.html`);
     } else {
         alert(response.status)
