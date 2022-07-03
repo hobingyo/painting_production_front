@@ -107,7 +107,7 @@ async function postArticle(contents, title, paint, painting){
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "access-control-allow-origin" : "*"},
-        body:form_data
+        body: form_data
         
 
     })
