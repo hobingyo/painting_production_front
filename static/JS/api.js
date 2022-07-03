@@ -85,7 +85,7 @@ function logout() {
 }
 
 
-
+// article 작성
 async function postArticle(contents, title, paint, painting){
 
     const image = document.getElementById("fileinput").files[0]
@@ -114,6 +114,22 @@ async function postArticle(contents, title, paint, painting){
 
     response_json = await response.json()
     console.log(response_json)
+
+
+// article 리스팅
+
+async function getArticles(){
+
+    const response = await fetch(`${backend_base_url}/article/`,{
+        method:'GET',
+    }
+    )
+
+    response_json = await response.json()
+    return response_json.articles
+}
+
+
 
 
 
