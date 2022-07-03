@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>그림그림 그림판</title>
+
+    <title>그려그려 그림판</title>
     <!--파비콘-->
     <link rel="favicon" href="../static/favicon.png">
     <!-- Bootstrap CSS -->
@@ -14,6 +15,11 @@
     <!--제이쿼리-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../static/CSS/main_style.css?after">
+    <!--api 및 게시글 자바스크립트-->
+    <script type="text/javascript" src="../static/JS/api.js"></script>
+    <script type="text/javascript" src="../static/JS/article.js"></script>
+    <script type="text/javascript" src="../static/JS/article_create.js"></script>
+
 </head>
 <body>
 
@@ -73,7 +79,7 @@
         </div>
         <div class="output-box"></div>
         <div class="row">
-            <button class="down_button col" style="font-size: 30px">다운로드</button>
+            <button class="down_button col"  style="font-size: 30px">다운로드</button>
             <button class="posting_button col" style="font-size: 30px" data-bs-toggle="modal" data-bs-target="#myModal1">게시물 작성</button>
         </div>
     </div>
@@ -143,19 +149,29 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color
         <div class="modal-header">
           <h4 class="modal-title">✍사진 포스팅 하기✍</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <form>
+            <div>
+              <label>Select file to upload</label>
+              <input id="fileinput" type="file">
+            </div>
+            <button type="submit">Convert</button>
+          </form>
         </div>
   
         <!-- Modal body -->
         <div class="modal-body">
             <div class="posting_image">작업 결과물</div>
+            <label for="title" style="margin-top:15px;"><b>제목:</b></label>
+            <input id="title">  </input><br>
             <label for="comment" style="margin-top:15px;"><b>게시물 내용:</b></label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <textarea class="form-control" rows="5" id="article_content" name="text"></textarea>
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
-          <button type="button" class="btn btn-danger" onclick="javascript:btn(); location.href='../templates/article.html'">업로드</button>
+          <button type="button" onclick="handleArticleCreate()" class="btn btn-danger">업로드</button>
+          {% comment %} onclick="javascript:btn(); location.href='../templates/article.html'" {% endcomment %}
         </div>
   
       </div>

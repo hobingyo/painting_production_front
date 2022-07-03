@@ -83,3 +83,59 @@ function logout() {
     alert("로그아웃 하였습니다")
     window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
 }
+
+
+
+async function postArticle(contents, title, paint, painting){
+
+    const image = document.getElementById("fileinput").files[0]
+    
+
+    let form_data = new FormData()
+    form_data.enctype = "multipart/form-data"
+    form_data.append("image", image)
+    form_data.append("title", title)
+    form_data.append("contents", contents)
+    form_data.append("paint", paint)
+    form_data.append("painting", painting)
+    console.log(form_data.get("image"))
+
+    const response = await fetch(`${backend_base_url}/article/`,{
+        method:'POST',
+        headers: {
+            // Accept: "multipart/form-data", 
+            // "Content-Type": "multipart/form-data",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin" : "*"},
+        body:form_data
+        
+
+    })
+
+    response_json = await response.json()
+    console.log(response_json)
+
+
+
+    // const articleData = {
+    //     contents : contents,
+    //     title : title,
+    //     input : input,
+    // }
+
+
+    // const response = await fetch(`${backend_base_url}/article/`,{
+    //     method:'POST',
+    //     headers: {
+    //         Accept: "application/json", 
+    //         "Content-Type": "application/json",
+    //         "Authorization": "Bearer " + localStorage.getItem("access"),
+    //         "access-control-allow-origin" : "*"},
+    //     body:JSON.stringify(articleData)
+        
+
+    // })
+    // response_json = await response.json()
+    // console.log(response_json)
+
+}

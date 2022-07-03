@@ -1,5 +1,5 @@
-const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "http://127.0.0.1:5500"
+// const backend_base_url = "http://127.0.0.1:8000"
+// const frontend_base_url = "http://127.0.0.1:5500"
 
 const urlParams = new URLSearchParams(window.location.search);
 const article_id = urlParams.get('id'); // username으로??
@@ -8,17 +8,17 @@ console.log(article_id)
 
 
 
-// 게시글 포스팅(articles) - 이미지 제작 후 바로 게시글로 넘어가도록
-function handleArticleCreate() {
-    // console.log("create article")
-    const content = document.getElementById("article_content").value
-    const image = canvas.toDataURL("image/jpg");
-    const link = document.createElement("a");
-    link.href = image;
-    link.download = "그려그려그림판";
-    link.click();
-    postArticle(content) // content 혹은 image로
-}
+// // 게시글 포스팅(articles) - 이미지 제작 후 바로 게시글로 넘어가도록
+// function handleArticleCreate() {
+//     console.log("create article")
+//     const content = document.getElementById("article_content").value
+//     const image = canvas.toDataURL("image/jpg");
+//     const link = document.createElement("a");
+//     link.href = image;
+//     link.download = "그려그려그림판";
+//     link.click();
+//     postArticle(content) // content 혹은 image로
+// }
 
 // 게시글 불러오기 - 게시물 내용(이미지, 유저이름, 댓글 끝(?))
 async function loadArticle(article_id) {
@@ -62,4 +62,6 @@ async function loadArticle(article_id) {
     }
 
 }
+
+
 
