@@ -29,10 +29,12 @@ window.onload = async function getMyData() {
             <div class="row justify-content-md-center">
             <div class="col-md-auto" >
             <div class="my_article" id="mypage-box">
-                <b id="title"><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span> 
+            <div class="article_wrap">
+                <div><b id="title"><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span></div>
                 <!--얘는 삭제예정-->
                 <div class="image_frame">
                     <img src="../static${image}" alt="" />
+                </div>
                 </div>
             </div>
         </div>

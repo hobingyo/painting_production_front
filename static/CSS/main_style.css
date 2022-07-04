@@ -225,30 +225,35 @@ body {
     margin-left: 50px;
     border-radius: 30px;
     padding: 30px;
+    
 
 }
-
 .my_article {
-    width: 300px;
     height: 200px;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 .justify-content-md-center {
     display: flex;
     flex-direction: row;
+    margin-left: 40px;
+    margin-top: 10px;
+    
    
 }
 
 .col-md-auto {
     margin-top: 10px;
     width: 300px;
-    background-color: rgba(255, 255, 255, 0.47);
+    background-color: background-color: rgba(255, 255, 255, 0.47);
     border-radius: 15px;
     height: 255px;
     padding-left: 15px;
-    margin-left: 30px;
-   
+    margin: auto;
+    
+
 }
 
 /*얘 삭제예정*/
@@ -263,6 +268,7 @@ body {
 .image_frame>img {
     height: 215px;
     width: 270px;
+    object-fit: cover;
 }
 
 .top-botton {
