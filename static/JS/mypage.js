@@ -14,24 +14,23 @@ window.onload = async function getMyData(){
     
     myData().then((data) => {
         detail = data
-        console.log(detail)
+        
         let username = detail['username']
+        
         document.getElementById("name").innerHTML = username
-        console.log(detail['article_set'][2]['contents'])
+        
         for (let i = 0; i < detail['article_set'].length; i++) {
             let title = detail['article_set'][i]['title']
             let image = detail['article_set'][i]['image']
             let contents = detail['article_set'][i]['contents']
-            console.log(detail['article_set'][i]['title'])
-            console.log(detail['article_set'][i]['image'])
-            console.log(detail['article_set'][i]['contents'])
+            let article_id = detail['article_set'][i]['id']
             let temp_html = `
                         <article>
                             <header>
                                 <span class="date">April 24, 2017</span>
-                                <h2><a href="#">${title}</a></h2>
+                                <h2><a href="http://127.0.0.1:5500/templates/${article_id}/article_detail.html">${title}</a></h2>
                             </header>
-                            <a href="generic.html" class="image fit"><img src="../static${image}" alt="" /></a>
+                            <a href=""http://127.0.0.1:5500/templates/${article_id}/article_detail.html"" class="image fit"><img src="../static${image}" alt="" /></a>
                             
                         </article>
                     </section>`

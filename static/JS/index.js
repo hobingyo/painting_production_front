@@ -15,15 +15,16 @@ window.onload = async function articleGet(){
         for (let i = 0; i < art.length; i++) {
             let image = art[i]['image']
             let title = art[i]['title']
+            let article_id = art[i]['id']
             console.log(art[i]['image'])
             console.log(art[i]['title'])
             let temp_html = `
                         <article>
                             <header>
                                 <span class="date">April 24, 2017</span>
-                                <h2><a href="#">${title}</a></h2>
+                                <h2><a href="http://127.0.0.1:5500/templates/${article_id}/article_detail.html">${title}</a></h2>
                             </header>
-                            <a href="generic.html" class="image fit"><img src="../static${image}" alt="" /></a>
+                            <a href="http://127.0.0.1:5500/templates/${article_id}/article_detail.html" class="image fit"><img src="../static${image}" alt="" /></a>
                             
                         </article>
                     </section>`
