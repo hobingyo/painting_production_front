@@ -152,28 +152,28 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color
           <h4 class="modal-title">✍사진 포스팅 하기✍</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           <form>
-            <div>
-              <label>Select file to upload</label>
-              <input id="fileinput" type="file">
-            </div>
-            <button type="submit">Convert</button>
+
           </form>
         </div>
   
         <!-- Modal body -->
         <div class="modal-body">
             <div class="posting_image">작업 결과물</div>
+            <div>
+                <label>Select file to upload</label>
+                <input id="fileinput" type="file">
+              </div>
             <label for="title" style="margin-top:15px;"><b>제목:</b></label>
             <input id="title">  </input><br>
             <label for="comment" style="margin-top:15px;"><b>게시물 내용:</b></label>
-            <textarea class="form-control" rows="5" id="article_content" name="text"></textarea>
+            <textarea class="form-control" rows="5" id="article_content" name="text" placeholder="10자 이상 입력해주세요"></textarea>
         </div>
   
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
           <button type="button" onclick="handleArticleCreate()" class="btn btn-danger">업로드</button>
-          {% comment %} onclick="javascript:btn(); location.href='../templates/article.html'" {% endcomment %}
+        
         </div>
   
       </div>

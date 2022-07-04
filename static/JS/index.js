@@ -16,20 +16,20 @@ window.onload = async function articleGet() {
             let image = art[i]['image']
             let title = art[i]['title']
             let article_id = art[i]['id']
-            console.log(art[i]['image'])
-            console.log(art[i]['title'])
+            // console.log(art[i]['image'])
+            // console.log(art[i]['title'])
             let temp_html = `
             <div class="col-7 justify-content-center>
-                    <section>
-                        <article>
-                            <header>
-                                <span class="date">April 24, 2017</span>
-                            </header>
-                            <h2><a href="${frontend_base_url}/templates/article_detail.html?=${article_id}">${title}</a></h2>    
-                            <a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}" class="image fit"><img src="../static${image}" alt="" /></a>
-                        </article>
-                        
-                    </section>
+                <div class="row justify-content-center">
+                <div class="col">
+                    <div>
+                        <h2><a href="${frontend_base_url}/templates/article_detail.html?=${article_id}">${title}</a></h2>
+                    </div>
+                    <div class="post_image_box ">
+                        <img src="../static${image}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'"/>
+                    </div>
+                </div>
+                </div>
             </div>`
             $('#article-box').prepend(temp_html)
             console.log(art)
