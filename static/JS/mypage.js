@@ -20,19 +20,19 @@ window.onload = async function getMyData(){
         document.getElementById("name").innerHTML = username
         
         for (let i = 0; i < detail['article_set'].length; i++) {
-            let author = detail['article_set'][i]['author']
             let title = detail['article_set'][i]['title']
             let image = detail['article_set'][i]['image']
+            console.log(image)
             let exposure_start_date = detail['article_set'][i]['exposure_start_date']
             let article_id = detail['article_set'][i]['id']
             let temp_html = `
             <div class="row justify-content-md-center">
             <div class="col-md-auto" >
             <div class="my_article" id="mypage-box">
-                <b id="title"><a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span> <span> </span>
+                <b id="title"><a href="http://127.0.0.1:5500/templates/article_detail.html?id=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span> 
                 <!--얘는 삭제예정-->
                 <div class="image_frame">
-                <a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}" class="image fit"><img src="../static${image}" alt="" /></a>
+                    <img src="../static${image}" alt="" />
                 </div>
             </div>
         </div>
