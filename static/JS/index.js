@@ -23,7 +23,7 @@ window.onload = async function articleGet() {
                 <div class="row justify-content-center">
                 <div class="col">
                     <div>
-                        <h2><a href="${frontend_base_url}/templates/article_detail.html?=${article_id}">${title}</a></h2>
+                        <h2><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}">${title}</a></h2>
                     </div>
                     <div class="post_image_box ">
                         <img src="../static${image}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'"/>
