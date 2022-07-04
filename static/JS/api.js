@@ -21,14 +21,16 @@ async function handleSignin() {
         body: JSON.stringify(signupData)
     }
     )
-    response_json = await response.json()
+    if (response.status == 500){
+        alert("중복된 아이디입니다.")
+    }
 
+    response_json = await response.json()
+    
     if (response.status == 200) {
         alert("회원가입 완료")
-        window.location.replace(`${frontend_base_url}/templates/sign_in.html`);
-    } else {
-        alert(response.status)
-    }
+        window.location.replace(`${frontend_base_url}/templates/sign_in.html`)}
+
 }
 
 // 로그인
@@ -154,28 +156,6 @@ async function deleteArticle(){
 
 
 
-// comment 작성
-async function postComment(comment, url_id){
-
-    let form_data = new FormData()
-    form_data.enctype = "multipart/form-data"
-    form_data.append("contents", comment)
-
-    const response = await fetch(`${backend_base_url}/article/commenting/25/`,{
-        method:'POST',
-        headers: {
-            // Accept: "multipart/form-data", 
-            // "Content-Type": "multipart/form-data",
-            "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
-        body: form_data
-    
-    })
-
-    response_json = await response.json()
-    console.log(response_json)
-
-}
 
 // comment 삭제
 
@@ -201,3 +181,25 @@ async function deleteComment(comment_id){
 
 
 
+// sample img 보내기
+
+async function sampleImg(img){
+    console.log(img)
+
+    const response = await fetch(`${backend_base_url}/article/all/`,{
+        method:'POST',
+
+        headers: {
+            Accept: "application/json", 
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin" : "*"},
+        body: JSON.stringify(img)
+        
+    }
+    )
+    response_json = await response.json()
+    window.location.reload()
+
+
+}

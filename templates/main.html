@@ -28,13 +28,13 @@
 <!--사이드바-->
 <div id="filter_box">
     <img src="../static/logo.png" style="width: 320px; height: 150px; margin-bottom: 0px; ">
-    <div  class="sample_box sample_box1">
+    <div  class="sample_box sample_box1" onclick="img1()">
         
     </div>
-    <div  class="sample_box sample_box2">
+    <div  class="sample_box sample_box2" onclick="img2()">
         
     </div>
-    <div  class="sample_box sample_box3">
+    <div  class="sample_box sample_box3" onclick="img3()">
         
     </div>
     <button type="button" class="btns btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"
@@ -133,7 +133,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" id="jsSave">저장</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="apply()">적용</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
             </div>
         </div>
