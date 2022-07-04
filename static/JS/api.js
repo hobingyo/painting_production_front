@@ -11,6 +11,8 @@ async function handleSignin() {
         fullname: document.getElementById('floatingFullname').value,
         // date : document.getElementById('floatingDate').value,
     }
+    const password = document.getElementById('floatingPassword').value
+    const password2 = document.getElementById('floatingPassword2').value
 
     const response = await fetch(`${backend_base_url}/user/`, {
         headers: {
@@ -21,14 +23,23 @@ async function handleSignin() {
         body: JSON.stringify(signupData)
     }
     )
-    response_json = await response.json()
 
-    if (response.status == 200) {
-        alert("회원가입 완료")
-        window.location.replace(`${frontend_base_url}/templates/sign_in.html`);
+    if (password == password2) {
+        if (response.status == 200) {
+            alert("회원가입 완료")
+            response_json = await response.json()
+            window.location.replace(`${frontend_base_url}/templates/sign_in.html`);
+        } else if (response.status == 500) {
+            alert("동일한 아이디가 이미 존재합니다")
+        } else {
+            alert(response.status)
+        }
     } else {
-        alert(response.status)
+        alert("비밀번호가 같지 않습니다")
     }
+
+
+
 }
 
 // 로그인
@@ -78,9 +89,9 @@ async function handleLogin() {
 // 로그아웃(적용전)
 
 function logout() {
-    localStorage.removeItem("")
-    localStorage.removeItem("")
-    localStorage.removeItem("")
+    localStorage.removeItem("access")
+    localStorage.removeItem("refresh")
+    localStorage.removeItem("payload")
     alert("로그아웃 하였습니다")
     window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
 }
@@ -107,7 +118,8 @@ async function postArticle(contents, title, paint, painting) {
             // Accept: "multipart/form-data", 
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
+            "access-control-allow-origin": "*"
+        },
         body: form_data
 
 
@@ -132,21 +144,22 @@ async function getArticles() {
 
 // article 삭제
 
-async function deleteArticle(){
-    const response = await fetch(`${backend_base_url}/article/${url_id}/delete/`,{
-        method:'DELETE',
+async function deleteArticle() {
+    const response = await fetch(`${backend_base_url}/article/${url_id}/delete/`, {
+        method: 'DELETE',
 
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
-        
+            "access-control-allow-origin": "*"
+        },
+
     }
     )
-    if (response.status == 200){
-    window.location.replace(`${frontend_base_url}/templates/article.html`);
-    response_json = await response.json()
-    return response_json
-    }else{
+    if (response.status == 200) {
+        window.location.replace(`${frontend_base_url}/templates/article.html`);
+        response_json = await response.json()
+        return response_json
+    } else {
         alert(response.status)
     }
 
@@ -168,7 +181,8 @@ async function postComment(comment, url_id) {
             // Accept: "multipart/form-data", 
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
+            "access-control-allow-origin": "*"
+        },
         body: form_data
 
     })
@@ -180,21 +194,22 @@ async function postComment(comment, url_id) {
 
 // comment 삭제
 
-async function deleteComment(comment_id){
-    const response = await fetch(`${backend_base_url}/article/comment/${comment_id}`,{
-        method:'DELETE',
+async function deleteComment(comment_id) {
+    const response = await fetch(`${backend_base_url}/article/comment/${comment_id}`, {
+        method: 'DELETE',
 
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
-        
+            "access-control-allow-origin": "*"
+        },
+
     }
     )
-    if (response.status == 200){
-    window.location.replace(`${frontend_base_url}/templates/article_detail.html?id=${url_id}`);
-    response_json = await response.json()
-    return response_json
-    }else{
+    if (response.status == 200) {
+        window.location.replace(`${frontend_base_url}/templates/article_detail.html?id=${url_id}`);
+        response_json = await response.json()
+        return response_json
+    } else {
         alert(response.status)
     }
 
