@@ -66,7 +66,6 @@ async function handleLogin() {
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
-        alert("{username}님의 접속을 환영합니다")
         window.location.replace(`${frontend_base_url}/templates/main.html`);
     } else {
         alert(response.status)
@@ -86,10 +85,10 @@ function logout() {
 
 
 // article 작성
-async function postArticle(contents, title, paint, painting){
+async function postArticle(contents, title, paint, painting) {
 
     const image = document.getElementById("fileinput").files[0]
-    
+
 
     let form_data = new FormData()
     form_data.enctype = "multipart/form-data"
@@ -100,15 +99,16 @@ async function postArticle(contents, title, paint, painting){
     form_data.append("painting", painting)
     console.log(form_data.get("image"))
 
-    const response = await fetch(`${backend_base_url}/article/`,{
-        method:'POST',
+    const response = await fetch(`${backend_base_url}/article/`, {
+        method: 'POST',
         headers: {
             // Accept: "multipart/form-data", 
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
+            "access-control-allow-origin": "*"
+        },
         body: form_data
-        
+
 
     })
 
@@ -116,18 +116,18 @@ async function postArticle(contents, title, paint, painting){
     console.log(response_json)
 
 
-// article 리스팅
+    // article 리스팅
 
-async function getArticles(){
+    async function getArticles() {
 
-    const response = await fetch(`${backend_base_url}/article/`,{
-        method:'GET',
+        const response = await fetch(`${backend_base_url}/article/`, {
+            method: 'GET',
+        }
+        )
+
+        response_json = await response.json()
+        return response_json.articles
     }
-    )
-
-    response_json = await response.json()
-    return response_json.articles
-}
 
 
 
@@ -148,7 +148,7 @@ async function getArticles(){
     //         "Authorization": "Bearer " + localStorage.getItem("access"),
     //         "access-control-allow-origin" : "*"},
     //     body:JSON.stringify(articleData)
-        
+
 
     // })
     // response_json = await response.json()
