@@ -99,7 +99,7 @@ body {
 
 .col {
     text-align: center;
-    margin-top: 15px;
+    
 }
 
 
@@ -211,6 +211,7 @@ body {
     display: flex;
     margin: 3% auto 10px auto;
     border: 2px dotted black;
+
 }
 
 /*마이 페이지*/
@@ -224,15 +225,19 @@ body {
     margin-left: 50px;
     border-radius: 30px;
     padding: 30px;
+
     
 }
 .my_article {
     width: 300px;
     height: 200px;
+    display: inline-flex;
 }
+
 .justify-content-md-center {
     display: flex;
     flex-direction: row;
+   
 }
 
 .col-md-auto {
@@ -243,6 +248,7 @@ body {
     height: 255px;
     padding-left: 15px;
     margin-left: 30px;
+   
 }
 
 /*얘 삭제예정*/
@@ -264,7 +270,7 @@ body {
     position: relative;
 
     display: block;
-    margin: 1px 15px 0px 0px;
+    margin: 14px 15px 0px 0px;
     padding: 0;
 
     overflow: hidden;
@@ -458,7 +464,7 @@ body {
     width: 400px;
     height: 396px;
     background-color: gray;
-    text-align: center;
+
 }
 
 .content img,
