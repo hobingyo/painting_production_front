@@ -86,10 +86,10 @@ function logout() {
 
 
 // article 작성
-async function postArticle(contents, title, paint, painting){
+async function postArticle(contents, title, paint, painting) {
 
     const image = document.getElementById("fileinput").files[0]
-    
+
 
     let form_data = new FormData()
     form_data.enctype = "multipart/form-data"
@@ -100,15 +100,15 @@ async function postArticle(contents, title, paint, painting){
     form_data.append("painting", painting)
     console.log(form_data.get("image"))
 
-    const response = await fetch(`${backend_base_url}/article/`,{
-        method:'POST',
+    const response = await fetch(`${backend_base_url}/article/`, {
+        method: 'POST',
         headers: {
             // Accept: "multipart/form-data", 
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "access-control-allow-origin" : "*"},
         body: form_data
-        
+
 
     })
 
@@ -117,10 +117,10 @@ async function postArticle(contents, title, paint, painting){
 }
 // article 리스팅
 
-async function getArticles(){
+async function getArticles() {
 
-    const response = await fetch(`${backend_base_url}/article/`,{
-        method:'GET',
+    const response = await fetch(`${backend_base_url}/article/`, {
+        method: 'GET',
     }
     )
 
@@ -132,21 +132,21 @@ async function getArticles(){
 
 
 // comment 작성
-async function postComment(comment, url_id){
+async function postComment(comment, url_id) {
 
     let form_data = new FormData()
     form_data.enctype = "multipart/form-data"
     form_data.append("contents", comment)
 
-    const response = await fetch(`${backend_base_url}/article/commenting/25/`,{
-        method:'POST',
+    const response = await fetch(`${backend_base_url}/article/commenting/${url_id}/`, {
+        method: 'POST',
         headers: {
             // Accept: "multipart/form-data", 
             // "Content-Type": "multipart/form-data",
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "access-control-allow-origin" : "*"},
         body: form_data
-    
+
     })
 
     response_json = await response.json()

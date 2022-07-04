@@ -1,6 +1,6 @@
 body {
     background-image: url("../../static/main.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -449,10 +449,23 @@ body {
 }
 
 .comment {
-    background-color: #ACFFEF;
+    background-color: #ffffff;
+    background-image: -moz-linear-gradient(0deg, #ffffff, #00ddff 53px);
+    background-image: -webkit-linear-gradient(0deg, #ffffff, #00ddff 53px);
+    background-image: -o-linear-gradient(0deg, #ffffff, #00ddff 53px);
+    background-image: -ms-linear-gradient(0deg, #ffffff, #00ddff 53px);
+    background-image: linear-gradient(0deg, #ffffff, #00ddff 53px);
+    -webkit-box-shadow: 5px 9px 25px -9px rgba(51, 51, 51, 9);
+    -moz-box-shadow: 5px 9px 25px -9px rgba(51, 51, 51, 9);
+    -o-box-shadow: 5px 9px 25px -9px rgba(51, 51, 51, 9);
+    -ms-box-shadow: 5px 9px 25px -9px rgba(51, 51, 51, 9);
+    box-shadow: 5px 9px 25px -9px rgba(51, 51, 51, 9);
     border-radius: 15px;
-    margin-top: 10px;
-    width: 85%;
+    margin: 15px auto 15px auto;
+    padding: 20px;
+    width: 500px;
+    display: flex;
+
 }
 
 .comment-boxs {

@@ -75,15 +75,18 @@ window.onload = async function articleDetail(){
                 let comment_user = data
                 console.log(comment_user)
                 let temp_html = `
-                <article>
-                    <header>
-                        <span class="date">April 24, 2017</span>
-                        <h2>${comments}</h2>
-                        <h2>${comment_user}</h2>
-                    </header>                     
-                </article>
-            </section>`
-            $('#comments-box').append(temp_html)
+                    <div class="row comment">
+                        <div class="col-10"style="text-align:left;">
+                            <b>🌈${comment_user}</b> : ${comments}
+                        </div>
+                        <div class="col-2">
+                            <span class="badge bg-danger" style="float: right;">삭제</span>
+                        </div>
+                    </div>`
+
+
+
+            $('#comments-box').prepend(temp_html)
             }
             )
             

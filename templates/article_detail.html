@@ -57,53 +57,24 @@
             </div>
             <div style="display: block; vertical-align: bottom; text-align: right; margin-right: 10px"><b>2022-07-02</b></div>
         </div>
-        <div class="col justify-content-center">
+        <!--<div class="col justify-content-center">
             <div class="comment_box row justify-content-center">
-                <div style="font-size: 40px; display: block; height: 5px"><b>댓글칸</b></div>
+                <div style="font-size: 40px; display: block; height: 5px"><b>댓글칸</b></div>-->
                 <!--댓글 for문 구간-->
                 
-                <div id="comments-box"></div>
-                <div class="col-12 comment justify-content-center"
-                     style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <div style="display: block;  margin-bottom: 0; bottom:0;"><span class="badge bg-danger"
-                                                                                    style="float: right;">삭제</span>
-                        <span class="badge badge-success" style="background-color: green; float: right">수정</span> <br>
-                        <b>작성자이름</b> : 요것은 진짜진짜진짜 댓글이야 밑으로 밀리지마렴동동동동동동
-                    </div>
-                </div>
 
-                <div class="pagination_box" style=" height: 10px; margin-top: 10px;">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
 <div class="comment-boxs">
     <div class="comments">
-        <form class="comment-input input-group mb-3">
+        <form class="comment-input input-group mb-3" style="margin-top:60px;">
             <input type="text" class="form-control" id='comment' name='comment' placeholder="댓글을 작성 해 주세요"/>
-            <button class="btn btn-outline-secondary" type="button" onclick="handleCommentCreate()" >감상평 남기기</button>
-            
+            <button class="btn btn-primary" type="button" onclick="handleCommentCreate()" >감상평 남기기</button>
         </form>
     </div>
 </div>
-
+<div id="comments-box" style="margin-top:40px;"></div>
 </body>
 </html>
