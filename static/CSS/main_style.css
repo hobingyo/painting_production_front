@@ -256,7 +256,6 @@ body {
 .image_frame > img {
     height: 215px;
     width: 270px;
-    object-fit: cover;
 }
 
 .top-botton {
