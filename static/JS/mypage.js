@@ -1,4 +1,3 @@
-
 window.onload = async function getMyData() {
     const myData = async () => {
         const response = await fetch(`${backend_base_url}/user/mypage/`, {
@@ -10,15 +9,10 @@ window.onload = async function getMyData() {
         })
         return response.json();
     }
-
-
     myData().then((data) => {
         detail = data
-
         let username = detail['username']
-
         document.getElementById("name").innerHTML = username
-
         for (let i = 0; i < detail['article_set'].length; i++) {
             let title = detail['article_set'][i]['title']
             let image = detail['article_set'][i]['image']

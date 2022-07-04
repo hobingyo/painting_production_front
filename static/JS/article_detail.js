@@ -75,17 +75,15 @@ window.onload = async function articleDetail(){
                 let comment_user = data
                 console.log(comment_user)
                 let temp_html = `
-                    <div class="row comment">
-                        <div class="col-10"style="text-align:left;">
-                            <b>🌈${comment_user}</b> : ${comments}
-                        </div>
-                        <div class="col-2">
-                            <span class="badge bg-danger" style="float: right;">삭제</span>
-                        </div>
-                    </div>`
-
-
-
+                <article>
+                    <header>
+                        <span class="date">April 24, 2017</span>
+                        <h2>${comments}</h2>
+                        <h2>${comment_user}</h2>
+                        <button onclick="removeComment(${comment_id})">댓글 삭제</button>
+                    </header>                     
+                </article>
+            </section>`
             $('#comments-box').prepend(temp_html)
             }
             )
@@ -97,36 +95,15 @@ window.onload = async function articleDetail(){
 }
 
 
-// // 댓글 작성 함수
-// async function handleCommentCreate() {
+async function removeArticle(){
 
-//     const url = window.location.search.split('=')
-//     const url_id = url[1]
-
-//     const comment = document.getElementById("comment").value
-    
-
-//     let form_data = new FormData()
-//     form_data.enctype = "multipart/form-data"
-//     form_data.append("contents", comment)
-
-//     const response = await fetch(`${backend_base_url}/article/commenting/${url_id}/`,{
-//         method:'POST',
-//         headers: {
-//             Accept: "application/json", 
-//             "Content-Type": "application/json",
-//             "Authorization": "Bearer " + localStorage.getItem("access"),
-//             "access-control-allow-origin" : "*"},
-//         body: form_data
-    
-//     })
-
-//     response_json = await response.json()
-//     console.log(response_json)
-
-    
-// }
+    await deleteArticle(url_id)
+    window.location.replace(`${fronted_base_url}/templates/article.html`)
+}
 
 
+async function removeComment(comment_id){
 
-
+    await deleteComment(comment_id)
+    window.location.replace(`${fronted_base_url}/templates/article_detail.html?id=${url_id}`)
+}

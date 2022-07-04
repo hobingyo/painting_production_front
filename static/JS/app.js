@@ -76,7 +76,7 @@ function handleCM(event) {
 
 // 저장
 function handleSaveClick() {
-    const image = canvas.toDataURL("image/png");
+    const image = canvas.toDataURL("static/png");
     const link = document.createElement("a");
     link.href = image;
     link.download = "그려그려그림판";
