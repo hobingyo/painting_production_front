@@ -24,7 +24,7 @@ body {
     width: 200px;
     height: 150px;
     background-color: blueviolet;
-    margin: 20px auto 5px auto;
+    margin: 15px auto 5px auto;
     align-items: center;
     border-radius: 15px;
 }
@@ -99,7 +99,7 @@ body {
 
 .col {
     text-align: center;
-    padding-top: 15px;
+    margin-top: 15px;
 }
 
 
@@ -428,9 +428,10 @@ body {
     outline-offset: -10px;
     text-align: center;
     transition: all .15s ease-in-out;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 396px;
     background-color: gray;
+    text-align: center;
 }
 
 .content img,
