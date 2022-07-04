@@ -16,3 +16,5 @@ function handleArticleCreate() {
 
     postArticle(contents, title, paint, painting) // content 혹은 image로
 }
+
+
