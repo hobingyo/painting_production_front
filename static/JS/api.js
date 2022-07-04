@@ -113,9 +113,8 @@ async function postArticle(contents, title, paint, painting){
     })
 
     response_json = await response.json()
-    console.log(response_json)
-
-
+    window.location.reload()
+}
 // article 리스팅
 
 async function getArticles(){
@@ -132,26 +131,25 @@ async function getArticles(){
 
 
 
+// comment 작성
+async function postComment(comment, url_id){
 
-    // const articleData = {
-    //     contents : contents,
-    //     title : title,
-    //     input : input,
-    // }
+    let form_data = new FormData()
+    form_data.enctype = "multipart/form-data"
+    form_data.append("contents", comment)
 
+    const response = await fetch(`${backend_base_url}/article/commenting/25/`,{
+        method:'POST',
+        headers: {
+            // Accept: "multipart/form-data", 
+            // "Content-Type": "multipart/form-data",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin" : "*"},
+        body: form_data
+    
+    })
 
-    // const response = await fetch(`${backend_base_url}/article/`,{
-    //     method:'POST',
-    //     headers: {
-    //         Accept: "application/json", 
-    //         "Content-Type": "application/json",
-    //         "Authorization": "Bearer " + localStorage.getItem("access"),
-    //         "access-control-allow-origin" : "*"},
-    //     body:JSON.stringify(articleData)
-        
-
-    // })
-    // response_json = await response.json()
-    // console.log(response_json)
+    response_json = await response.json()
+    console.log(response_json)
 
 }
