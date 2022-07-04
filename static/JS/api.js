@@ -39,6 +39,8 @@ async function handleLogin() {
         username: document.getElementById("floatingInput").value,
         password: document.getElementById('floatingPassword').value
     }
+    console.log(loginData.username)
+    username = loginData.username
 
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
         headers: {
@@ -64,12 +66,11 @@ async function handleLogin() {
         const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-
         localStorage.setItem("payload", jsonPayload);
-        alert("{username}님의 접속을 환영합니다")
+        alert(username + "님의 접속을 환영합니다")
         window.location.replace(`${frontend_base_url}/templates/main.html`);
     } else {
-        alert(response.status)
+        alert('로그인 정보가 일치하지 않습니다.')
     }
 
 }
