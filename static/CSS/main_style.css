@@ -23,11 +23,29 @@ body {
     display: flex;
     width: 200px;
     height: 150px;
-    background-color: blueviolet;
-    margin: 15px auto 5px auto;
+    margin: 20px auto 5px auto;
     align-items: center;
     border-radius: 15px;
+
+    
 }
+
+.sample_box:active {
+    border-radius: 10px;
+    background-color: rgb(255, 181, 43);
+    box-shadow: 0px 0px 5px 5px rgb(255, 188, 43);
+    
+    
+}
+
+.sample_box:visited {
+    border-radius: 10px;
+    background-color: rgb(255, 181, 43);
+    box-shadow: 0px 0px 10px 10px rgb(255, 188, 43);
+}
+
+
+
 
 .mspaint_box {
     display: flex;
@@ -520,4 +538,23 @@ body {
 .article_title {
     font-size: 20px;
     text-align: center;
+}
+
+.sample_box1 {
+    background-image: url("../../static/filter01.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.sample_box2 {
+    background-image: url("../../static/filter02.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.sample_box3 {
+    background-image: url("../../static/filter03.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
