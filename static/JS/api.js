@@ -129,6 +129,29 @@ async function getArticles(){
 }
 
 
+// article 삭제
+
+async function deleteArticle(){
+    const response = await fetch(`${backend_base_url}/article/${url_id}/delete/`,{
+        method:'DELETE',
+
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin" : "*"},
+        
+    }
+    )
+    if (response.status == 200){
+    window.location.replace(`${frontend_base_url}/templates/article.html`);
+    response_json = await response.json()
+    return response_json
+    }else{
+        alert(response.status)
+    }
+
+}
+
+
 
 
 // comment 작성
@@ -153,3 +176,28 @@ async function postComment(comment, url_id){
     console.log(response_json)
 
 }
+
+// comment 삭제
+
+async function deleteComment(comment_id){
+    const response = await fetch(`${backend_base_url}/article/comment/${comment_id}`,{
+        method:'DELETE',
+
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin" : "*"},
+        
+    }
+    )
+    if (response.status == 200){
+    window.location.replace(`${frontend_base_url}/templates/article_detail.html?id=${url_id}`);
+    response_json = await response.json()
+    return response_json
+    }else{
+        alert(response.status)
+    }
+
+}
+
+
+
