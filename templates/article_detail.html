@@ -35,14 +35,14 @@
             </button>
         </div>
         <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/sign_in.html'">로그아웃
+            <button type="button" class="btn top-botton" onclick="logout()">로그아웃
             </button>
         </div>
     </div>
 </div>
 <!--게시글-->
 <div class="row justify-content-center" id="articlepage_box">
-    <button class="delete" type="button" style="">작품 삭제</button>
+    <button class="delete" type="button" style="" onclick="removeArticle()">작품 삭제</button>
     <button class="amend" type="button" style="width:110px">작품 수정</button>
     <div style="width:1500px; margin: auto; display: flex; flex-direction: row">
         <div style="width: 700px; background-color: white; margin: auto">
