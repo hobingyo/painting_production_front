@@ -24,7 +24,7 @@ window.onload = async function articleGet(){
                                 <span class="date">April 24, 2017</span>
                                 <h2><a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}">${title}</a></h2>
                             </header>
-                            <a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}" class="image fit"><img src="../static${image}" alt="" /></a>
+                            <a href="http://127.0.0.1:5500/templates/article_detail.html?id=${article_id}" class="image fit"><img src="../static${image}" alt="" /></a>
                             
                         </article>
                     </section>`
