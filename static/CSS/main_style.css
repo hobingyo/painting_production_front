@@ -338,12 +338,22 @@ body {
     padding: 20px 20px 30px 40px;
 }
 
-#articlepage_box>button {
-    width: 115px;
+.delete {
+    width: 100px;
     height: 25px;
     margin-top: 360px;
     transform: rotate(-3deg);
     background-color: #5ABEFF;
+    border: transparent;
+    margin-left: 20px;
+}
+.amend {
+    width: 100px;
+    height: 25px;
+    margin-top: 425px;
+    margin-left: 10px;
+    transform: rotate(-24deg);
+    background-color: #E16A9D;
     border: transparent;
 }
 

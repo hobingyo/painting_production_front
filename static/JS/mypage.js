@@ -29,7 +29,7 @@ window.onload = async function getMyData(){
             <div class="row justify-content-md-center">
             <div class="col-md-auto" >
             <div class="my_article" id="mypage-box">
-                <b id="title"><a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span>
+                <b id="title"><a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}"> ${title}</b><span> | ${exposure_start_date}</span> <span> </span>
                 <!--얘는 삭제예정-->
                 <div class="image_frame">
                 <a href="http://127.0.0.1:5500/templates/article_detail.html?=${article_id}" class="image fit"><img src="../static${image}" alt="" /></a>
