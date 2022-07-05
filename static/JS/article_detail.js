@@ -44,9 +44,13 @@ window.onload = async function articleDetail() {
         document.getElementById("contents").innerText = contents
         console.log(contents)
 
-        let image = detail['image']
-        document.getElementById("image").innerText = image
-        console.log(image)
+        let output = detail['output']
+        img_output = document.getElementById("output")
+        img_output.src = `http://127.0.0.1:8000/media/output/${output}`
+        // articleImage.setAttribute("src", `${backend_base_url}/media/output/${output}/`)
+
+
+        
 
         // 댓글 리스팅
         console.log(detail['comment_set'].length)

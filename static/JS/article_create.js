@@ -56,6 +56,12 @@ function apply(){
         type : 'post',
         url : `${backend_base_url}/article/saveImage/`,
         data : formdata,
+        headers: {
+            // Accept: "application/json",
+            // "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin": "*"
+        },
         processData : false,	// data 파라미터 강제 string 변환 방지!!
         contentType : false,	// application/x-www-form-urlencoded; 방지!!
         success : function () {
