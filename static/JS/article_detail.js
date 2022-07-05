@@ -78,6 +78,8 @@ window.onload = async function articleDetail() {
                         <h2>${comments}</h2>
                         <h2>${comment_user}</h2>
                         <button onclick="removeComment(${comment_id})">댓글 삭제</button>
+                        <input id="comments-update"></input>
+                        <button onclick="updateComment(${comment_id})">댓글 수정</button>
                     </header>                     
                 </article>
             </section>`
@@ -107,14 +109,17 @@ async function removeComment(comment_id) {
 
 
 /// 게시물 수정
-function updateMode() {
+async function updateArticle() {
 
 
     let title = document.getElementById("title").value
-    let content = document.getElementById("contents").value
+    let contents = document.getElementById("contents-update").value
+    console.log(contents)
 
+
+    // updateArticle(contents, title)
     let updateData = {
-        contents : content,
+        contents : contents,
         title : title,
     }
 
@@ -131,7 +136,40 @@ function updateMode() {
 
     response_json = await response.json()
     window.location.reload()
-
-    await deleteComment(comment_id)
     
 }
+
+
+/// 댓글 수정
+
+async function updateComment(comment_id) {
+
+    let contents = document.getElementById("comments-update").value
+    
+    console.log(contents)
+    console.log(comment_id)
+
+
+    
+    let updateData = {
+        contents : contents,
+        
+    }
+
+    let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
+        method: 'PUT',
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin": "*"
+        },
+        body: JSON.stringify(updateData)
+    })
+
+    response_json = await response.json()
+    window.location.reload()
+    
+}
+
+
