@@ -26,9 +26,9 @@ window.onload = async function articleDetail() {
         return response.json();
     }
     username().then((data) => {
-        user = data
-        document.getElementById("name").innerHTML = user
-    }
+            user = data
+            document.getElementById("name").innerHTML = user
+        }
     )
 
     // 게시물 상세 내용
@@ -67,21 +67,21 @@ window.onload = async function articleDetail() {
                 return response.json();
             }
             commentUsername().then((data) => {
-                let comment_user = data
-                console.log(comment_user)
-                let temp_html =
-                    `<article class="comment">
+                    let comment_user = data
+                    console.log(comment_user)
+                    let temp_html =
+                        `<article class="comment">
                     <header>
-                        <h5>🌈${comment_user} : ${comments}</h5>
-                        <button onclick="removeComment(${comment_id})">댓글 삭제</button>
-                        <button data-bs-toggle="modal" data-bs-target="#myModal1">댓글 수정</button>
+                        <h5 style="max-width:400px"> 🌈${comment_user} : ${comments}</h5>
                     </header>                     
+                         <div style="display: flex; margin-left:auto; max-height: 35px;">
+                            <button onclick="removeComment(${comment_id})" style="bottom:0;">삭제</button>
+                         </div>
                 </article>
             </section>`
-                $('#comments-box').prepend(temp_html)
-            }
+                    $('#comments-box').prepend(temp_html)
+                }
             )
-
 
 
         }
@@ -135,36 +135,36 @@ async function updateArticle() {
 }
 
 /// 댓글 수정
-
-async function updateComment(comment_id) {
-
-    let contents = document.getElementById("comments-update").value
-
-    console.log(contents)
-    console.log(comment_id)
-
-
-
-    let updateData = {
-        contents: contents,
-
-    }
-
-    let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
-        method: 'PUT',
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin": "*"
-        },
-        body: JSON.stringify(updateData)
-    })
-
-    response_json = await response.json()
-    window.location.reload()
-
-}
+//
+// async function updateComment(comment_id) {
+//
+//     let contents = document.getElementById("comments-update").value
+//
+//     console.log(contents)
+//     console.log(comment_id)
+//
+//
+//
+//     let updateData = {
+//         contents: contents,
+//
+//     }
+//
+//     let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
+//         method: 'PUT',
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//             "Authorization": "Bearer " + localStorage.getItem("access"),
+//             "access-control-allow-origin": "*"
+//         },
+//         body: JSON.stringify(updateData)
+//     })
+//
+//     response_json = await response.json()
+//     window.location.reload()
+//
+// }
 
 
 // 모달
