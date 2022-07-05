@@ -25,9 +25,8 @@ window.onload = async function getMyData() {
                 <div class="my_article" id="mypage-box">
                     <div class="article_wrap">
                         <div> ${exposure_start_date}</span></div>
-                        <!--얘는 삭제예정-->
                         <div class="image_frame">
-                            <img src="http://127.0.0.1:8000/media/output${output}" alt="" />
+                            <img src="http://127.0.0.1:8000/media/output/${output}" alt="" />
                         </div>
                         <div class="article_title">
                         <b id="title" style="font-size=300px; "><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}" style="color:black"> < ${title} ></b><span>

@@ -1,6 +1,6 @@
 const url = window.location.search.split('=')
 const url_id = url[1]
-
+console.log(url_id)
 // 게시물 상세 페이지 부르기
 window.onload = async function articleDetail() {
 
@@ -14,7 +14,7 @@ window.onload = async function articleDetail() {
         })
         return response.json();
     }
-
+    
     let username = async () => {
         let response = await fetch(`${backend_base_url}/article/${url_id}/username/`, {
             method: 'GET',
@@ -26,15 +26,15 @@ window.onload = async function articleDetail() {
         return response.json();
     }
     username().then((data) => {
-        user = data
-        document.getElementById("name").innerHTML = user
-    }
+            user = data
+            document.getElementById("name").innerHTML = user
+        }
     )
 
     // 게시물 상세 내용
     articleDetail().then((data) => {
         detail = data
-        console.log(detail)
+        console.log(detail['id']=url_id)
 
         let title = detail['title']
         document.getElementById("article_title").innerText = title
@@ -44,9 +44,12 @@ window.onload = async function articleDetail() {
         document.getElementById("contents").innerText = contents
         console.log(contents)
 
-        let image = detail['image']
-        document.getElementById("image").innerHTML = image
-        console.log(image)
+        let output = detail['output']
+        img_output = document.getElementById("output")
+        img_output.src = `http://127.0.0.1:8000/media/output/${output}`
+
+
+
 
         // let output = detail['output']
         // document.getElementById("output").innerText = `http://127.0.0.1:8000/${output}/`
@@ -71,21 +74,21 @@ window.onload = async function articleDetail() {
                 return response.json();
             }
             commentUsername().then((data) => {
-                let comment_user = data
-                console.log(comment_user)
-                let temp_html =
-                    `<article class="comment">
+                    let comment_user = data
+                    console.log(comment_user)
+                    let temp_html =
+                        `<article class="comment">
                     <header>
-                        <h5>🌈${comment_user} : ${comments}</h5>
-                        <button onclick="removeComment(${comment_id})">댓글 삭제</button>
-                        <button data-bs-toggle="modal" data-bs-target="#myModal1">댓글 수정</button>
+                        <h5 style="max-width:400px"> 🌈${comment_user} : ${comments}</h5>
                     </header>                     
+                         <div style="display: flex; margin-left:auto; max-height: 35px;">
+                            <button onclick="removeComment(${comment_id})" style="bottom:0;">삭제</button>
+                         </div>
                 </article>
             </section>`
-                $('#comments-box').prepend(temp_html)
-            }
+                    $('#comments-box').prepend(temp_html)
+                }
             )
-
 
 
         }
@@ -139,36 +142,36 @@ async function updateArticle() {
 }
 
 /// 댓글 수정
-
-async function updateComment(comment_id) {
-
-    let contents = document.getElementById("comments-update").value
-
-    console.log(contents)
-    console.log(comment_id)
-
-
-
-    let updateData = {
-        contents: contents,
-
-    }
-
-    let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
-        method: 'PUT',
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin": "*"
-        },
-        body: JSON.stringify(updateData)
-    })
-
-    response_json = await response.json()
-    window.location.reload()
-
-}
+//
+// async function updateComment(comment_id) {
+//
+//     let contents = document.getElementById("comments-update").value
+//
+//     console.log(contents)
+//     console.log(comment_id)
+//
+//
+//
+//     let updateData = {
+//         contents: contents,
+//
+//     }
+//
+//     let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
+//         method: 'PUT',
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//             "Authorization": "Bearer " + localStorage.getItem("access"),
+//             "access-control-allow-origin": "*"
+//         },
+//         body: JSON.stringify(updateData)
+//     })
+//
+//     response_json = await response.json()
+//     window.location.reload()
+//
+// }
 
 
 // // 모달
