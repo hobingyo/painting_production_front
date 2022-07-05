@@ -30,7 +30,7 @@ window.onload = async function getMyData() {
                             <img src="../static/${image}" alt="" />
                         </div>
                         <div class="article_title">
-                        <b id="title" style="font-size=300px; "><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}"> ${title}</b><span>
+                        <b id="title" style="font-size=300px; "><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}" style="color:black"> < ${title} ></b><span>
                         </div>
                     </div>
                 </div>

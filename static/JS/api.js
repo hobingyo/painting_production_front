@@ -27,6 +27,7 @@ async function handleSignin() {
         method: 'post',
         body: JSON.stringify(signupData)
     }
+
     )
     if (username == '' || password == '' || email == '' || fullname =='') {
         alert("빈칸을 입력해주세요")
@@ -248,6 +249,4 @@ async function sampleImg(img) {
     )
     response_json = await response.json()
     window.location.reload()
-
-
 }
