@@ -7,12 +7,17 @@ async function handleSignin() {
     const signupData = {
         username: document.getElementById("floatingInput").value,
         password: document.getElementById('floatingPassword').value,
+        password2: document.getElementById('floatingPassword2').value,
         email: document.getElementById('floatingEmail').value,
         fullname: document.getElementById('floatingFullname').value,
-        // date : document.getElementById('floatingDate').value,
+        
     }
     const password = document.getElementById('floatingPassword').value
     const password2 = document.getElementById('floatingPassword2').value
+    const username = document.getElementById("floatingInput").value
+    const email = document.getElementById("floatingEmail").value
+    const fullname = document.getElementById("floatingFullname").value
+
 
     const response = await fetch(`${backend_base_url}/user/`, {
         headers: {
@@ -22,9 +27,15 @@ async function handleSignin() {
         method: 'post',
         body: JSON.stringify(signupData)
     }
-    )
 
-    if (password == password2) {
+    )
+    if (username == '' || password == '' || email == '' || fullname =='') {
+        alert("빈칸을 입력해주세요")
+    }
+    else if (!email.includes('@')){
+        alert("이메일을 확인해주세요")
+    }
+    else if (password == password2) {
         if (response.status == 200) {
             alert("회원가입 완료")
             response_json = await response.json()
@@ -35,7 +46,7 @@ async function handleSignin() {
             alert(response.status)
         }
     } else {
-        alert("비밀번호가 같지 않습니다")
+        alert("비밀번호가 일치하지 않습니다")
     }
 
 
@@ -89,10 +100,11 @@ async function handleLogin() {
 // 로그아웃(적용전)
 
 function logout() {
+    alert("로그아웃 하였습니다")
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
-    alert("로그아웃 하였습니다")
+    
     window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
 }
 
@@ -220,23 +232,21 @@ async function deleteComment(comment_id) {
 
 // sample img 보내기
 
-async function sampleImg(img){
+async function sampleImg(img) {
     console.log(img)
 
-    const response = await fetch(`${backend_base_url}/article/all/`,{
-        method:'POST',
+    const response = await fetch(`${backend_base_url}/article/all/`, {
+        method: 'POST',
 
         headers: {
-            Accept: "application/json", 
+            Accept: "application/json",
             "Content-Type": "application/json",
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "access-control-allow-origin" : "*"},
         body: JSON.stringify(img)
-        
+
     }
     )
     response_json = await response.json()
     window.location.reload()
-
-
 }
