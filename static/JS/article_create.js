@@ -8,9 +8,7 @@ function handleArticleCreate() {
     const paint = canvas.toDataURL("image/jpg");
     const link = document.createElement("a");
     const painting = link    
-    // link.href = image;
-    // link.download = "그려그려그림판";
-    // link.click();
+
 
 
 
@@ -53,6 +51,13 @@ function apply(){
         type : 'post',
         url : `${backend_base_url}/article/saveImage/`,
         data : formdata,
+        headers: {
+            // Accept: "application/json",
+            // "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("access"),
+            "access-control-allow-origin": "*"
+        },
+    
         processData : false,	// data 파라미터 강제 string 변환 방지!!
         contentType : false,	// application/x-www-form-urlencoded; 방지!!
         success : function () {
@@ -64,25 +69,3 @@ function apply(){
 
 
 
-
-//     const link = document.createElement("a");
-//     link.href = image;
-//     link.download = "그려그려그림판";
-//     link.click();
-
-//     console.log(image)
-//     sampleImg(img)
-    
-// }
-// function saveImage() {
-//     var $canvas = document.createElement('canvas');
-//     var imgDataUrl = $canvas.toDataURL('image/png');
-    
-//     var blobBin = atob(imgDataUrl.split(',')[1]);	// base64 데이터 디코딩
-//     var array = [];
-//     for (var i = 0; i < blobBin.length; i++) {
-//         array.push(blobBin.charCodeAt(i));
-//     }
-//     var file = new Blob([new Uint8Array(array)], {type: 'image/png'});	// Blob 생성
-//     var formdata = new FormData();	// formData 생성
-//     formdata.append("file", file);	// file data 추가

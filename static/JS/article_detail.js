@@ -45,8 +45,12 @@ window.onload = async function articleDetail() {
         console.log(contents)
 
         let image = detail['image']
-        document.getElementById("image").innerText = image
+        document.getElementById("image").innerHTML = image
         console.log(image)
+
+        // let output = detail['output']
+        // document.getElementById("output").innerText = `http://127.0.0.1:8000/${output}/`
+        // console.log(`http://127.0.0.1:8000/${output}/`)
 
         // 댓글 리스팅
         console.log(detail['comment_set'].length)
@@ -167,11 +171,11 @@ async function updateComment(comment_id) {
 }
 
 
-// 모달
+// // 모달
 
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
+// var myModal = document.getElementById('myModal')
+// var myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.bs.modal', function () {
-    myInput.focus()
-})
+// myModal.addEventListener('shown.bs.modal', function () {
+//     myInput.focus()
+// })

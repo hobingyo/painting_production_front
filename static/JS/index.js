@@ -13,10 +13,10 @@ window.onload = async function articleGet() {
         art = data
         console.log(art)
         for (let i = 0; i < art.length; i++) {
-            let image = art[i]['image']
+            let output = art[i]['output']
             let title = art[i]['title']
             let article_id = art[i]['id']
-            // console.log(art[i]['image'])
+            console.log(art[i]['image'])
             // console.log(art[i]['title'])
             let temp_html = `
             <div class="col-7 justify-content-center>
@@ -26,7 +26,7 @@ window.onload = async function articleGet() {
                         <h2><a href="${frontend_base_url}/templates/article_detail.html?id=${article_id}">${title}</a></h2>
                     </div>
                     <div class="post_image_box ">
-                        <img src="../static${image}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'"/>
+                        <img src="http://127.0.0.1:8000/media/output${output}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'"/>
                     </div>
                 </div>
                 </div>
@@ -36,3 +36,5 @@ window.onload = async function articleGet() {
         }
     })
 }
+
+
