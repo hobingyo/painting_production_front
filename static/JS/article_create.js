@@ -35,9 +35,6 @@ function img3(){
 
 function apply(){
 
-
-
-
     let image = canvas.toDataURL("image/png")
     console.log(image)
 
@@ -51,7 +48,7 @@ function apply(){
     formdata.append("image", file, "image.png");	// file data 추가
 
 
-    
+    console.log(formdata)
     $.ajax({
         type : 'post',
         url : `${backend_base_url}/article/saveImage/`,

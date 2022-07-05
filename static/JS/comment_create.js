@@ -9,6 +9,7 @@ async function handleCommentCreate() {
     const commentData = {
         contents: comment,
     }
+    
 
     // let form_data = new FormData()
     // form_data.enctype = "multipart/form-data"
