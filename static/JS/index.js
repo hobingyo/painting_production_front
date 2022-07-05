@@ -25,8 +25,8 @@ window.onload = async function articleGet() {
                     <div style="color: white">
                         <h2>${title}</h2>
                     </div>
-                    <div class="post_image_box ">
-                        <img src="http://127.0.0.1:8000/media/output${output}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'"/>
+                    <div class="post_image_box">
+                        <img src="http://127.0.0.1:8000/media/output/${output}" alt="" onclick="location.href='${frontend_base_url}/templates/article_detail.html?id=${article_id}'" style="height:100%; border: thick double black" />
                     </div>
                 </div>
                 </div>
