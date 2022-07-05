@@ -10,7 +10,7 @@ async function handleSignin() {
         password2: document.getElementById('floatingPassword2').value,
         email: document.getElementById('floatingEmail').value,
         fullname: document.getElementById('floatingFullname').value,
-        // date : document.getElementById('floatingDate').value,
+        
     }
     const password = document.getElementById('floatingPassword').value
     const password2 = document.getElementById('floatingPassword2').value
