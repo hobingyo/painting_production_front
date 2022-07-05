@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{게시물 넘버}}째 게시물</title>
+    <title>게시물</title>
 
     <!--파비콘-->
-    <link rel="favicon" href="../static/favicon.png">
+    <link rel="shortcut icon" href="../static/favicon.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -41,19 +41,27 @@
     </div>
 </div>
 <!--게시글-->
-<div class="row justify-content-center" id="articlepage_box">
-    <button class="delete" type="button" style="" onclick="removeArticle()">작품 삭제</button>
-    <button class="amend" type="button" style="width:110px" onclick="updateMode()">작품 수정</button>
+<div class="row" id="articlepage_box">
     <div style="width:1500px; margin: auto; display: flex; flex-direction: row">
-        <div style="width: 700px; background-color: white; margin: auto">
+        <div class="article_detail_box">
+            <!--제목 구간-->
+            <div style="width: 300px; margin: 20px auto 30px auto; padding-top: 20px; height: 50px"><h1><p id="article_title"></p></h1></div>
+
+            <!--작성자 구간-->
+            <div class="row" style="width: 670px; margin: auto; font-size: 20px">
+                <p id="name" class="col-9" style="text-align:right"></p><div class="col-2" style="text-align:left">님의 작품</div>
+
             <!--이미지 주소 구간-->
-            <div style="width: 670px; height: 500px; background-color: #2ecc71; margin: auto; margin-top: 10px ">
+            <div style="width: 670px; height: 500px; background-color: #2ecc71; margin: 10px auto 20px auto">
                 <p id="image"></p>
             </div>
-            <!--작성자 구간-->
-            <div style="width: 670px; margin: auto; padding-top: 20px; text-align: left; font-size: 30px"><b><p id="name"></p>님의 작품입니다.</b></div>
+
             <!--글내용 구간-->
-            <div style="width: 680px; margin: auto; padding-top: 20px; height: 160px"><p id="contents"></p>
+            <div style="width: 680px; margin: auto; padding-top: 20px; height: 160px; background-color:grey; margin-bottom : 30px"><h4><p id="contents"></p></h4>
+            </div>
+            <div class="row justify-content-center">
+                <span class="col-2 badge bg-danger" style="margin:5px;" onclick="removeArticle()">작품 삭제</span>
+                <span class="col-2 badge bg-success" style="margin:5px;" data-bs-toggle="modal" data-bs-target="#myModal">작품 수정</span>
             </div>
             <div style="display: block; vertical-align: bottom; text-align: right; margin-right: 10px"><b>2022-07-02</b></div>
         </div>
@@ -67,22 +75,101 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--댓글작성-->
 <div class="comment-boxs">
     <div class="comments">
         <form class="comment-input input-group mb-3">
             <input type="text" class="form-control" id='comment' placeholder="댓글을 작성 해 주세요"/>
-            <button class="btn btn-outline-secondary" type="button" onclick="handleCommentCreate()" >감상평 남기기</button>
-            
-
+            <button class="btn btn-secondary" type="button" onclick="handleCommentCreate()" >감상평 남기기</button>
         </form>
     </div>
 </div>
+
+<!--댓글리스트-->
 <div id="comments-box" style="margin-top:40px;"></div>
 
-<input id="title"></input>
-<input id="contents-update"></input>
-<button onclick="updateArticle()">수정하기</button>
 
+<!--<button onclick="updateArticle()">수정하기</button>-->
+
+
+<!-- 게시물 수정 모달 -->
+<div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color: rgba(150, 151, 200, 0.527)">
+    <div class="modal-dialog" >
+      <div class="modal-content" style="background-color: rgba(150, 151, 200, 0.4)">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">🔧게시글 수정🔧</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <form>
+
+          </form>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="posting_image">원본 사진</div>
+            <div class ="row"style="display:flex; margin:auto; width:300px; height:50px">
+                <label for="title" style="margin-top:15px;" col="6"></label>
+                <input id="title" placeholder="수정할 제목을 입력하세요"></input>
+            </div>
+            <hr>
+            <div class ="row"style="display:flex; margin:auto; width:300px; height:160px">
+            <!--<label for="comment"><b>게시물 내용:</b></label>-->
+            <textarea id="contents-update" placeholder="10자 이상 입력해주세요" col="5" row="3"></textarea>
+            <!--<textarea class="form-control" rows="5" id="contents-update" name="text" ></textarea>-->
+            </div>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+          <button type="button" onclick="updateArticle()" class="btn btn-danger">수정</button>
+        
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- 댓글 수정 모달 -->
+<div class="modal fade" id="myModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color: rgba(150, 151, 200, 0.527)">
+    <div class="modal-dialog" >
+      <div class="modal-content" style="background-color: rgba(150, 151, 200, 0.4)">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">🔧댓글🔧</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <form>
+          </form>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body" >
+            <textarea id="comments-update" placeholder="수정할 내용을 입력해주세요" col="5" style="width: 300px; height:130px; display:block; margin:auto"></textarea>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+          <button type="button" onclick="updateComment()" class="btn btn-danger">수정</button>
+        
+        </div>
+  
+      </div>
+    </div>
+  </div>
 
 
 
