@@ -271,7 +271,7 @@ body {
 
 }
 
-.image_frame > img {
+.image_frame>img {
     height: 215px;
     width: 270px;
     object-fit: cover;
@@ -303,10 +303,10 @@ body {
 
 .btn:focus {
     background-color: #ffffff;
-    color:#148c49;
+    color: #148c49;
 }
 
-.top-botton > * {
+.top-botton>* {
     position: relative;
 }
 
@@ -380,7 +380,7 @@ body {
 }
 
 
-#articlepage_box > button:hover {
+#articlepage_box>button:hover {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
 }
 
@@ -568,4 +568,9 @@ body {
     border-radius: 15px;
     margin: auto;
     box-shadow: 0 10px 15px 3px rgba(26, 1, 1, 0.2);
+}
+
+.post_image_box {
+    width: 300px;
+    height: 230px;
 }

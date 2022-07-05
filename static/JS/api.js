@@ -1,5 +1,5 @@
 const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "https://incredible-boba-20c1b9.netlify.app"
+const frontend_base_url = "http://127.0.0.1:5500"
 
 
 // 회원가입
@@ -10,7 +10,7 @@ async function handleSignin() {
         password2: document.getElementById('floatingPassword2').value,
         email: document.getElementById('floatingEmail').value,
         fullname: document.getElementById('floatingFullname').value,
-        
+
     }
     const password = document.getElementById('floatingPassword').value
     const password2 = document.getElementById('floatingPassword2').value
@@ -29,10 +29,10 @@ async function handleSignin() {
     }
 
     )
-    if (username == '' || password == '' || email == '' || fullname =='') {
+    if (username == '' || password == '' || email == '' || fullname == '') {
         alert("빈칸을 입력해주세요")
     }
-    else if (!email.includes('@')){
+    else if (!email.includes('@')) {
         alert("이메일을 확인해주세요")
     }
     else if (password == password2) {
@@ -104,7 +104,7 @@ function logout() {
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
-    
+
     window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
 }
 
@@ -242,7 +242,8 @@ async function sampleImg(img) {
             Accept: "application/json",
             "Content-Type": "application/json",
             "Authorization": "Bearer " + localStorage.getItem("access"),
-            "access-control-allow-origin" : "*"},
+            "access-control-allow-origin": "*"
+        },
         body: JSON.stringify(img)
 
     }
