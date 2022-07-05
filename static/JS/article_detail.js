@@ -1,10 +1,8 @@
 const url = window.location.search.split('=')
 const url_id = url[1]
 
-
-
+// 게시물 상세 페이지 부르기
 window.onload = async function articleDetail() {
-
 
     let articleDetail = async () => {
         let response = await fetch(`${backend_base_url}/article/${url_id}/`, {
@@ -33,24 +31,24 @@ window.onload = async function articleDetail() {
     }
     )
 
-
-
-
-
-
-
-
+    // 게시물 상세 내용
     articleDetail().then((data) => {
         detail = data
         console.log(detail)
+
+        let title = detail['title']
+        document.getElementById("article_title").innerText = title
+        console.log(title)
+
         let contents = detail['contents']
         document.getElementById("contents").innerText = contents
         console.log(contents)
+
         let image = detail['image']
         document.getElementById("image").innerText = image
         console.log(image)
 
-
+        // 댓글 리스팅
         console.log(detail['comment_set'].length)
         for (let i = 0; i < detail['comment_set'].length; i++) {
             let comments = detail['comment_set'][i]['contents']
@@ -71,15 +69,12 @@ window.onload = async function articleDetail() {
             commentUsername().then((data) => {
                 let comment_user = data
                 console.log(comment_user)
-                let temp_html = `
-                <article>
+                let temp_html =
+                    `<article class="comment">
                     <header>
-                        <span class="date">April 24, 2017</span>
-                        <h2>${comments}</h2>
-                        <h2>${comment_user}</h2>
+                        <h5>🌈${comment_user} : ${comments}</h5>
                         <button onclick="removeComment(${comment_id})">댓글 삭제</button>
-                        <input id="comments-update"></input>
-                        <button onclick="updateComment(${comment_id})">댓글 수정</button>
+                        <button data-bs-toggle="modal" data-bs-target="#myModal1">댓글 수정</button>
                     </header>                     
                 </article>
             </section>`
@@ -93,14 +88,14 @@ window.onload = async function articleDetail() {
     })
 }
 
-
+// 게시물 삭제
 async function removeArticle() {
 
     await deleteArticle(url_id)
     window.location.replace(`${fronted_base_url}/templates/article.html`)
 }
 
-
+// 댓글 삭제
 async function removeComment(comment_id) {
 
     await deleteComment(comment_id)
@@ -119,8 +114,8 @@ async function updateArticle() {
 
     // updateArticle(contents, title)
     let updateData = {
-        contents : contents,
-        title : title,
+        contents: contents,
+        title: title,
     }
 
     let response = await fetch(`${backend_base_url}/article/${url_id}/update/`, {
@@ -136,24 +131,23 @@ async function updateArticle() {
 
     response_json = await response.json()
     window.location.reload()
-    
-}
 
+}
 
 /// 댓글 수정
 
 async function updateComment(comment_id) {
 
     let contents = document.getElementById("comments-update").value
-    
+
     console.log(contents)
     console.log(comment_id)
 
 
-    
+
     let updateData = {
-        contents : contents,
-        
+        contents: contents,
+
     }
 
     let response = await fetch(`${backend_base_url}/article/comment/${comment_id}/`, {
@@ -169,7 +163,15 @@ async function updateComment(comment_id) {
 
     response_json = await response.json()
     window.location.reload()
-    
+
 }
 
 
+// 모달
+
+var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+    myInput.focus()
+})

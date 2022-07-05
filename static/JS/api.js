@@ -220,19 +220,19 @@ async function deleteComment(comment_id) {
 
 // sample img 보내기
 
-async function sampleImg(img){
+async function sampleImg(img) {
     console.log(img)
 
-    const response = await fetch(`${backend_base_url}/article/all/`,{
-        method:'POST',
+    const response = await fetch(`${backend_base_url}/article/all/`, {
+        method: 'POST',
 
         headers: {
-            Accept: "application/json", 
+            Accept: "application/json",
             "Content-Type": "application/json",
             "Authorization": "Bearer " + localStorage.getItem("access"),
             "access-control-allow-origin" : "*"},
         body: JSON.stringify(img)
-        
+
     }
     )
     response_json = await response.json()
