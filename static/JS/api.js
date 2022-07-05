@@ -27,6 +27,7 @@ async function handleSignin() {
         method: 'post',
         body: JSON.stringify(signupData)
     }
+
     )
     if (username == '' || password == '' || email == '' || fullname =='') {
         alert("빈칸을 입력해주세요")
@@ -99,10 +100,11 @@ async function handleLogin() {
 // 로그아웃(적용전)
 
 function logout() {
+    alert("로그아웃 하였습니다")
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
-    alert("로그아웃 하였습니다")
+    
     window.location.replace(`${frontend_base_url}/templates/sign_in.html`)
 }
 
@@ -247,6 +249,4 @@ async function sampleImg(img) {
     )
     response_json = await response.json()
     window.location.reload()
-
-
 }
