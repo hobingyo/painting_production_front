@@ -19,48 +19,31 @@
     <script type="text/javascript" src="../static/JS/api.js"></script>
     <script type="text/javascript" src="../static/JS/article.js"></script>
     <script type="text/javascript" src="../static/JS/article_create.js"></script>
-    
-
-
 </head>
 <body>
+<!--상단바-->
+<div class="site_box row">
+    <div class="col">
+    </div>
+    <div class="col offset-md-5 row">
+        <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판</button>
+        <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지</button>
+        <button type="button" class="btn top-botton" onclick="logout()">로그아웃</button>
+    </div>
+</div>
 
 <!--사이드바-->
-<div id="filter_box">
+<div id="filter_box" style="top:0%">
     <img src="../static/logo.png" style="width: 320px; height: 150px; margin-bottom: 0px; ">
-    <div  class="sample_box sample_box1" onclick="img1()">
-        
-    </div>
-    <div  class="sample_box sample_box2" onclick="img2()">
-        
-    </div>
-    <div  class="sample_box sample_box3" onclick="img3()">
-        
-    </div>
-    <button type="button" class="btns btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"
-            style="width: 250px; height: 110px; margin-top: 30px;">
+    <div  class="sample_box sample_box1" onclick="img1()"></div>
+    <div  class="sample_box sample_box2" onclick="img2()"></div>
+    <div  class="sample_box sample_box3" onclick="img3()"></div>
+    <button type="button" class="btns btn-warning" data-bs-toggle="modal" data-bs-target="#myModal"style="width: 250px; height: 110px; margin-top: 30px;">
         <h3>그림판🎨</h3>
     </button>
 </div>
 
-<!--상단바-->
-<div class="site_box">
-    <div class="row">
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판
-            </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지
-            </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="logout()">로그아웃
-            </button>
-        </div>
-    </div>
-</div>
-
+{#가운데 메인 컨텐츠 구간#}
 <div class="row mainpage_box">
     <div class="col-6">
         <div class="photo_up">

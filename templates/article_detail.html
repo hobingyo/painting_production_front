@@ -19,31 +19,22 @@
 
 </head>
 <!--상단바-->
-<div class="site_box" style="display: flex; flex-direction: row;width: 100%;">
-    <div class="row">
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/main.html'"
-                    style="margin-left: 1300px">메인 페이지
-            </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판
-            </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지
-            </button>
-        </div>
-        <div class="col">
-            <button type="button" class="btn top-botton" onclick="logout()">로그아웃
-            </button>
-        </div>
+<div class="site_box row">
+    <div class="col">
+        <image src="../static/bar+logo.png" style="width: 210px; height: 70px" onclick="location.href='../templates/main.html'"></image>
+    </div>
+    <div class="col offset-md-5 row">
+        <button type="button" class="btn top-botton" onclick="location.href='../templates/main.html'">메인 페이지</button>
+        <button type="button" class="btn top-botton" onclick="location.href='../templates/article.html'">전체 게시판</button>
+        <button type="button" class="btn top-botton" onclick="location.href='../templates/my_page.html'">마이 페이지</button>
+        <button type="button" class="btn top-botton" onclick="logout()">로그아웃</button>
     </div>
 </div>
 <!--게시글-->
-<div class="row" id="articlepage_box">
+
+<div class="row" id="articlepage_box" style="margin-top: 80px">
     <div style="width:1500px; margin: auto; display: flex; flex-direction: row">
-        <div class="article_detail_box">
+        <div class="article_detail_box" >
             <!--제목 구간-->
             <div style="width: 300px; margin: 20px auto 30px auto; padding-top: 20px; height: 50px"><h1><p id="article_title"></p></h1></div>
 
@@ -163,7 +154,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
-          <button type="button" onclick="updateComment()" class="btn btn-danger">수정</button>
+          <button type="button" onclick="updateComment(${comment_id})" class="btn btn-danger">수정</button>
         
         </div>
   

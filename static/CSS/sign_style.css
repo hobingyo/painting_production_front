@@ -1,3 +1,8 @@
+* {
+    font-family: "KOTRA HOPE";
+    src: url("../static/font/KOTRA HOPE.otf") format("opentype");
+}
+
 body {
     background-image: url("../../static/sign.png");
     background-repeat: repeat;
