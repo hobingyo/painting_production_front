@@ -7,12 +7,17 @@ async function handleSignin() {
     const signupData = {
         username: document.getElementById("floatingInput").value,
         password: document.getElementById('floatingPassword').value,
+        password2: document.getElementById('floatingPassword2').value,
         email: document.getElementById('floatingEmail').value,
         fullname: document.getElementById('floatingFullname').value,
-        // date : document.getElementById('floatingDate').value,
+        
     }
     const password = document.getElementById('floatingPassword').value
     const password2 = document.getElementById('floatingPassword2').value
+    const username = document.getElementById("floatingInput").value
+    const email = document.getElementById("floatingEmail").value
+    const fullname = document.getElementById("floatingFullname").value
+
 
     const response = await fetch(`${backend_base_url}/user/`, {
         headers: {
@@ -23,8 +28,13 @@ async function handleSignin() {
         body: JSON.stringify(signupData)
     }
     )
-
-    if (password == password2) {
+    if (username == '' || password == '' || email == '' || fullname =='') {
+        alert("빈칸을 입력해주세요")
+    }
+    else if (!email.includes('@')){
+        alert("이메일을 확인해주세요")
+    }
+    else if (password == password2) {
         if (response.status == 200) {
             alert("회원가입 완료")
             response_json = await response.json()
@@ -35,7 +45,7 @@ async function handleSignin() {
             alert(response.status)
         }
     } else {
-        alert("비밀번호가 같지 않습니다")
+        alert("비밀번호가 일치하지 않습니다")
     }
 
 
