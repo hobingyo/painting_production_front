@@ -1,6 +1,6 @@
 const url = window.location.search.split('=')
 const url_id = url[1]
-console.log(url_id)
+
 // 게시물 상세 페이지 부르기
 window.onload = async function articleDetail() {
 
@@ -47,13 +47,6 @@ window.onload = async function articleDetail() {
         let output = detail['output']
         img_output = document.getElementById("output")
         img_output.src = `http://127.0.0.1:8000/media/output/${output}`
-
-
-
-
-        // let output = detail['output']
-        // document.getElementById("output").innerText = `http://127.0.0.1:8000/${output}/`
-        // console.log(`http://127.0.0.1:8000/${output}/`)
 
         // 댓글 리스팅
         console.log(detail['comment_set'].length)
