@@ -1,5 +1,5 @@
-const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "https://incredible-boba-20c1b9.netlify.app"
+const backend_base_url = "http://52.79.202.50/"
+const frontend_base_url = "https://stalwart-zabaione-a10727.netlify.app/"
 
 
 // 회원가입
