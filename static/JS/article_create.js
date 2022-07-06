@@ -8,9 +8,7 @@ function handleArticleCreate() {
     const paint = canvas.toDataURL("image/jpg");
     const link = document.createElement("a");
     const painting = link    
-    // link.href = image;
-    // link.download = "그려그려그림판";
-    // link.click();
+
 
 
 
@@ -35,9 +33,6 @@ function img3(){
 
 function apply(){
 
-
-
-
     let image = canvas.toDataURL("image/png")
     console.log(image)
 
@@ -51,7 +46,7 @@ function apply(){
     formdata.append("image", file, "image.png");	// file data 추가
 
 
-    
+    console.log(formdata)
     $.ajax({
         type : 'post',
         url : `${backend_base_url}/article/saveImage/`,
@@ -73,25 +68,3 @@ function apply(){
 
 
 
-
-//     const link = document.createElement("a");
-//     link.href = image;
-//     link.download = "그려그려그림판";
-//     link.click();
-
-//     console.log(image)
-//     sampleImg(img)
-    
-// }
-// function saveImage() {
-//     var $canvas = document.createElement('canvas');
-//     var imgDataUrl = $canvas.toDataURL('image/png');
-    
-//     var blobBin = atob(imgDataUrl.split(',')[1]);	// base64 데이터 디코딩
-//     var array = [];
-//     for (var i = 0; i < blobBin.length; i++) {
-//         array.push(blobBin.charCodeAt(i));
-//     }
-//     var file = new Blob([new Uint8Array(array)], {type: 'image/png'});	// Blob 생성
-//     var formdata = new FormData();	// formData 생성
-//     formdata.append("file", file);	// file data 추가

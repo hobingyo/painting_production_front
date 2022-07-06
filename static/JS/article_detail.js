@@ -14,7 +14,7 @@ window.onload = async function articleDetail() {
         })
         return response.json();
     }
-
+    
     let username = async () => {
         let response = await fetch(`${backend_base_url}/article/${url_id}/username/`, {
             method: 'GET',
@@ -34,7 +34,7 @@ window.onload = async function articleDetail() {
     // 게시물 상세 내용
     articleDetail().then((data) => {
         detail = data
-        console.log(detail)
+        console.log(detail['id']=url_id)
 
         let title = detail['title']
         document.getElementById("article_title").innerText = title
@@ -47,10 +47,6 @@ window.onload = async function articleDetail() {
         let output = detail['output']
         img_output = document.getElementById("output")
         img_output.src = `http://127.0.0.1:8000/media/output/${output}`
-        // articleImage.setAttribute("src", `${backend_base_url}/media/output/${output}/`)
-
-
-        
 
         // 댓글 리스팅
         console.log(detail['comment_set'].length)
@@ -171,11 +167,11 @@ async function updateArticle() {
 // }
 
 
-// 모달
+// // 모달
 
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
+// var myModal = document.getElementById('myModal')
+// var myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.bs.modal', function () {
-    myInput.focus()
-})
+// myModal.addEventListener('shown.bs.modal', function () {
+//     myInput.focus()
+// })

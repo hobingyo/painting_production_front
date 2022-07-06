@@ -16,7 +16,7 @@ console.log(article_id)
 //     const link = document.createElement("a");
 //     link.href = image;
 //     link.download = "그려그려그림판";
-//     link.click();
+//     link.;
 //     postArticle(content) // content 혹은 image로
 // }
 

@@ -24,13 +24,21 @@ function dragOver(e) {
   }
 }
 
-function uploadFiles(e) {
+
+
+// 파일 드래그 앤 드롭시 백엔드로 파일 보내는 함수
+async function uploadFiles(e) {
   e.stopPropagation();
   e.preventDefault();
   dragOver(e);
 
   e.dataTransfer = e.originalEvent.dataTransfer;
-  var files = e.target.files || e.dataTransfer.files;
+  const files = e.target.files || e.dataTransfer.files;
+
+  response_json = await response.json()
+  console.log(response_json)
+
+  
   if (files.length > 1) {
     alert('하나만 업로드 해주세요');
     return;
@@ -40,9 +48,14 @@ function uploadFiles(e) {
       "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
       "outline": "none",
       "background-size": "100% 100%"
-    });
+    })
   } else {
     alert('이미지 파일을 드롭해주세요');
     return;
   }
 }
+
+function transfer(files) {
+  console.log(files)
+ }
+
