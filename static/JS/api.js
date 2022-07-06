@@ -1,6 +1,6 @@
 
-const backend_base_url = "http://52.79.202.50/"
-const frontend_base_url = "https://stalwart-zabaione-a10727.netlify.app/"
+const backend_base_url = "http://52.79.202.50"
+const frontend_base_url = "https://stalwart-zabaione-a10727.netlify.app"
 
 
 
